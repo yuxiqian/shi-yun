@@ -19,9 +19,9 @@ class PrefViewController: NSViewController {
     
     override func viewDidLoad() {
         registerDefaultPrefs()
-        super.viewDidLoad()
         loadPrefs()
         updateTextPrompt()
+        super.viewDidLoad()
     }
     
     @IBAction func OKAndClose(_ sender: NSButton) {

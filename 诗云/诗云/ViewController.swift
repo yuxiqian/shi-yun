@@ -541,7 +541,7 @@ extension ViewController: NSTableViewDelegate {
             poemDetailViewController.poemAuthor = selPoem.author
             poemDetailViewController.poemDynasty = selPoem.dynasty
             poemDetailViewController.poemContent = selPoem.content
-            poemDetailViewController.poemParsedContent = manageParagraph(parsedString: selPoem.content)
+            poemDetailViewController.poemParsedContent = manageParagraph(parsedString: poemDetailViewController.poemContent)
 //            let application = NSApplication.shared
 //            application.runModal(for: poemDetailWindow)
 //            poemDetailWindow.close()

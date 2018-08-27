@@ -18,8 +18,8 @@ class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
     @IBOutlet weak var fontSizeSlider: NSSlider!
     @IBOutlet weak var fontSizeDisplay: NSTextField!
     
-    var isAutoLayout = false
-    
+    @objc dynamic var isAutoLayout = false
+    @objc dynamic var fontSize = 24
     
     @IBAction func fontSizeChanger(_ sender: NSSlider) {
         self.fontSize = Int(fontSizeSlider.intValue)
@@ -27,42 +27,53 @@ class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
     }
     
     @IBAction func onChecked(_ sender: NSButton) {
+        if  autoNewLine.state == NSControl.StateValue.on {
+            self.isAutoLayout = true
+        } else {
+            self.isAutoLayout = false
+        }
         writeContent()
     }
+    
+    
     
     @objc dynamic var poemTitle = "静夜思"
     @objc dynamic var poemAuthor = "李白"
     @objc dynamic var poemDynasty = "唐朝"
-    @objc dynamic var poemContent = "床前明月光，疑是地上霜。举头望明月，低头思故乡。"
-    @objc dynamic var poemParsedContent = "床前明月光，疑是地上霜。\n举头望明月，低头思故乡。"
-    @objc dynamic var fontSize = 24
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
-
-        let userDefaults = UserDefaults.standard
+    let userDefaults = UserDefaults.standard
+    var poemContent = "床前明月光，疑是地上霜。举头望明月，低头思故乡。"
+    var poemParsedContent = "床前明月光，疑是地上霜。\n举头望明月，低头思故乡。"
+    override func viewDidLayout() {
         contentField.isEditable = false
         isAutoLayout = userDefaults.bool(forKey: PreferenceKey.autoLayout)
+        NSLog("Now, isAutoLayout = \(isAutoLayout), poemContent = \(poemContent), poemParsedContent = \(poemParsedContent)")
         if isAutoLayout {
+            contentField.string = poemParsedContent
             autoNewLine.state = NSControl.StateValue.on
         } else {
+            contentField.string = poemContent
             autoNewLine.state = NSControl.StateValue.off
         }
-        fontSize = userDefaults.integer(forKey: PreferenceKey.fontSizePoint)
         fontSizeSlider.intValue = Int32(self.fontSize)
         fontSizeDisplay.stringValue = "字号  \(self.fontSize)"
-        
-
         writeContent()
+        super.viewDidLayout()
+    }
+    
+    override func viewDidLoad() {
+        // Do view setup here.
+
+        fontSize = userDefaults.integer(forKey: PreferenceKey.fontSizePoint)
+
+        super.viewDidLoad()
     }
 
-
     func writeContent() {
-        if (autoNewLine.state == NSControl.StateValue.on) {
-            poemParsedContent = manageParagraph(parsedString: poemContent)
+        if isAutoLayout {
+            contentField.string = poemParsedContent
         } else {
-            poemParsedContent = poemContent
+            contentField.string = poemContent
         }
     }
     

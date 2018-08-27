@@ -809,12 +809,6 @@ Copyright © 2015</string>
                                             <color key="insertionPointColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <binding destination="Wfb-o9-kn1" name="fontSize" keyPath="fontSize" id="uG0-ZN-94w"/>
-                                                <binding destination="Wfb-o9-kn1" name="value" keyPath="poemParsedContent" id="w6F-7J-Qes">
-                                                    <dictionary key="options">
-                                                        <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
-                                                        <bool key="NSConditionallySetsEditable" value="NO"/>
-                                                    </dictionary>
-                                                </binding>
                                             </connections>
                                         </textView>
                                     </subviews>
@@ -845,6 +839,7 @@ Copyright © 2015</string>
                                 </buttonCell>
                                 <connections>
                                     <action selector="onChecked:" target="Wfb-o9-kn1" id="3eP-mu-mCh"/>
+                                    <binding destination="Wfb-o9-kn1" name="value" keyPath="isAutoLayout" id="cR9-Yl-zhb"/>
                                 </connections>
                             </button>
                             <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Apm-Wz-Btu">
