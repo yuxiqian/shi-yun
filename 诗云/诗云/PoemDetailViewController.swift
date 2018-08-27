@@ -55,7 +55,7 @@ class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
     override func makeTouchBar() -> NSTouchBar? {
         let touchBar = NSTouchBar()
         touchBar.delegate = self
-        touchBar.defaultItemIdentifiers = [NSTouchBarItem.Identifier("smallerSize"), NSTouchBarItem.Identifier("biggerSize"), NSTouchBarItem.Identifier("closePoem")]
+        touchBar.defaultItemIdentifiers = [NSTouchBarItem.Identifier("textField"), NSTouchBarItem.Identifier("smallerSize"), NSTouchBarItem.Identifier("biggerSize"), NSTouchBarItem.Identifier("Separator"), NSTouchBarItem.Identifier("closePoem")]
         return touchBar
     }
     
@@ -64,14 +64,20 @@ class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
         let touchBarItem = NSCustomTouchBarItem(identifier: identifier)
         switch identifier {
+        case NSTouchBarItem.Identifier("textField"):
+            touchBarItem.view = NSTextField(labelWithString: "  文字  ")
+            break
         case NSTouchBarItem.Identifier("biggerSize"):
-            touchBarItem.view = NSButton(title: "加大字号", target: self, action: #selector(biggerFontSize(_:)))
+            touchBarItem.view = NSButton(title: "🔺 变大", target: self, action: #selector(biggerFontSize(_:)))
+            break
+        case NSTouchBarItem.Identifier("Separator"):
+            touchBarItem.view = NSTextField(labelWithString: "      ")
             break
         case NSTouchBarItem.Identifier("smallerSize"):
-            touchBarItem.view = NSButton(title: "减小字号", target: self, action: #selector(smallerFontize(_:)))
+            touchBarItem.view = NSButton(title: "🔻 变小", target: self, action: #selector(smallerFontize(_:)))
             break
         case NSTouchBarItem.Identifier("closePoem"):
-            touchBarItem.view = NSButton(title: "关闭", target: self, action: #selector(closePoem(_:)))
+            touchBarItem.view = NSButton(title: "❌ 关闭", target: self, action: #selector(closePoem(_:)))
             break
         default:
             touchBarItem.view = NSButton(title: "defaultButton", target: self, action: nil)

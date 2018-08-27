@@ -54,7 +54,8 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     override func makeTouchBar() -> NSTouchBar? {
         let touchBar = NSTouchBar()
         touchBar.delegate = self
-        touchBar.defaultItemIdentifiers = [NSTouchBarItem.Identifier("searchContext"), NSTouchBarItem.Identifier("searchAuthor"), NSTouchBarItem.Identifier("loadSuggest")]
+        touchBar.defaultItemIdentifiers = [NSTouchBarItem.Identifier("searchText"), NSTouchBarItem.Identifier("searchContext"), NSTouchBarItem.Identifier("searchAuthor"),
+            NSTouchBarItem.Identifier("Separator"),NSTouchBarItem.Identifier("loadSuggest")]
         return touchBar
     }
     
@@ -64,14 +65,20 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
         let touchBarItem = NSCustomTouchBarItem(identifier: identifier)
         switch identifier {
+        case NSTouchBarItem.Identifier("searchText"):
+            touchBarItem.view = NSTextField(labelWithString: "  搜索  ")
+            break
         case NSTouchBarItem.Identifier("searchContext"):
-            touchBarItem.view = NSButton(title: "搜索诗文", target: self, action: #selector(touchBarSearchContext(_:)))
+            touchBarItem.view = NSButton(title: "🔍 诗文", target: self, action: #selector(touchBarSearchContext(_:)))
             break
         case NSTouchBarItem.Identifier("searchAuthor"):
-            touchBarItem.view = NSButton(title: "搜索作者", target: self, action: #selector(touchBarSearchAuthor(_:)))
+            touchBarItem.view = NSButton(title: "🔎 作者", target: self, action: #selector(touchBarSearchAuthor(_:)))
+            break
+        case NSTouchBarItem.Identifier("Separator"):
+            touchBarItem.view = NSTextField(labelWithString: "      ")
             break
         case NSTouchBarItem.Identifier("loadSuggest"):
-            touchBarItem.view = NSButton(title: "加载今日推荐", target: self, action: #selector(loadTodaySuggest(_:)))
+            touchBarItem.view = NSButton(title: "❤️ 推荐", target: self, action: #selector(loadTodaySuggest(_:)))
             break
         default:
             touchBarItem.view = NSButton(title: "defaultButton", target: self, action: nil)
@@ -96,6 +103,8 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     }
     
     @IBAction func loadTodaySuggest(_ sender: Any) {
+        loadToTheEnd = true
+        globalQueue.suspend()
         poemArray.removeAll()
         loadingIcon.isHidden = false
         self.disableUI()
@@ -262,7 +271,7 @@ class ViewController: NSViewController, NSTouchBarDelegate {
             writeLog("匹配到标记：搜索诗文")
             break
         default:
-            writeLog("啥也没匹配到，崩了")
+            writeLog("啥也没匹配到。")
             return
         }
 //        https://so.gushiwen.org/search.aspx?type=title&page=80&value=wwww
