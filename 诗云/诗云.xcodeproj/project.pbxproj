@@ -1,0 +1,683 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		36D252EAE82F901AFBC4AF5D /* libPods-诗云.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 675091C5AFA1111A19893916 /* libPods-诗云.a */; };
+		8A15D2CD213182EC00078A32 /* PoemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15D2CC213182EC00078A32 /* PoemDetailViewController.swift */; };
+		8A630DD2212EAE5000B9EF51 /* libKanna.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A630DD1212EAE5000B9EF51 /* libKanna.a */; };
+		8A85C513212E2AB100F38B7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85C512212E2AB100F38B7C /* AppDelegate.swift */; };
+		8A85C515212E2AB100F38B7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85C514212E2AB100F38B7C /* ViewController.swift */; };
+		8A85C517212E2AB300F38B7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A85C516212E2AB300F38B7C /* Assets.xcassets */; };
+		8A85C51A212E2AB300F38B7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A85C518212E2AB300F38B7C /* Main.storyboard */; };
+		8A85C526212E2AB300F38B7C /* __Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85C525212E2AB300F38B7C /* __Tests.swift */; };
+		8A85C531212E2AB300F38B7C /* __UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85C530212E2AB300F38B7C /* __UITests.swift */; };
+		8A95BCBB21316C03005F128F /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95BCBA21316C03005F128F /* AppUtils.swift */; };
+		8AB3EC8D212F8F13008CB24E /* PoemStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3EC8C212F8F13008CB24E /* PoemStruct.swift */; };
+		8AE5BC402132A4C000C4033E /* RMBlurredView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE5BC3F2132A4BF00C4033E /* RMBlurredView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A85C522212E2AB300F38B7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A85C507212E2AB100F38B7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A85C50E212E2AB100F38B7C;
+			remoteInfo = "诗云";
+		};
+		8A85C52D212E2AB300F38B7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A85C507212E2AB100F38B7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A85C50E212E2AB100F38B7C;
+			remoteInfo = "诗云";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		675091C5AFA1111A19893916 /* libPods-诗云.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-诗云.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		895D91E49C380BC47F4B200B /* Pods-诗云.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-诗云.release.xcconfig"; path = "Pods/Target Support Files/Pods-诗云/Pods-诗云.release.xcconfig"; sourceTree = "<group>"; };
+		8A15D2CC213182EC00078A32 /* PoemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemDetailViewController.swift; sourceTree = "<group>"; };
+		8A630DD1212EAE5000B9EF51 /* libKanna.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libKanna.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A630DD5212EE8F900B9EF51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
+		8A85C50F212E2AB100F38B7C /* 诗云.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "诗云.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A85C512212E2AB100F38B7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8A85C514212E2AB100F38B7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8A85C516212E2AB300F38B7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A85C519212E2AB300F38B7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8A85C51C212E2AB300F38B7C /* __.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = __.entitlements; sourceTree = "<group>"; };
+		8A85C521212E2AB300F38B7C /* 诗云Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "诗云Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A85C525212E2AB300F38B7C /* __Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __Tests.swift; sourceTree = "<group>"; };
+		8A85C527212E2AB300F38B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A85C52C212E2AB300F38B7C /* 诗云UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "诗云UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A85C530212E2AB300F38B7C /* __UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __UITests.swift; sourceTree = "<group>"; };
+		8A85C532212E2AB300F38B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A85C53E212E2EEE00F38B7C /* 诗云.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "诗云.entitlements"; sourceTree = "<group>"; };
+		8A95BCBA21316C03005F128F /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
+		8AB3EC8C212F8F13008CB24E /* PoemStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemStruct.swift; sourceTree = "<group>"; };
+		8AE5BC3D2132A4BE00C4033E /* 诗云-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "诗云-Bridging-Header.h"; sourceTree = "<group>"; };
+		8AE5BC3E2132A4BF00C4033E /* RMBlurredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMBlurredView.h; path = RMBlurredView/RMBlurredView.h; sourceTree = "<group>"; };
+		8AE5BC3F2132A4BF00C4033E /* RMBlurredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMBlurredView.m; path = RMBlurredView/RMBlurredView.m; sourceTree = "<group>"; };
+		B10D893A622491335E845C5E /* Pods-诗云.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-诗云.debug.xcconfig"; path = "Pods/Target Support Files/Pods-诗云/Pods-诗云.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A85C50C212E2AB100F38B7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A630DD2212EAE5000B9EF51 /* libKanna.a in Frameworks */,
+				36D252EAE82F901AFBC4AF5D /* libPods-诗云.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A85C51E212E2AB300F38B7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A85C529212E2AB300F38B7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		80C58A35E04A5C94287CB36D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B10D893A622491335E845C5E /* Pods-诗云.debug.xcconfig */,
+				895D91E49C380BC47F4B200B /* Pods-诗云.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8A85C506212E2AB100F38B7C = {
+			isa = PBXGroup;
+			children = (
+				8AE5BC3E2132A4BF00C4033E /* RMBlurredView.h */,
+				8AE5BC3F2132A4BF00C4033E /* RMBlurredView.m */,
+				8A85C511212E2AB100F38B7C /* 诗云 */,
+				8A85C524212E2AB300F38B7C /* 诗云Tests */,
+				8A85C52F212E2AB300F38B7C /* 诗云UITests */,
+				8A85C510212E2AB100F38B7C /* Products */,
+				80C58A35E04A5C94287CB36D /* Pods */,
+				CBE0270A3C4B1C8B22C6B829 /* Frameworks */,
+				8AE5BC3D2132A4BE00C4033E /* 诗云-Bridging-Header.h */,
+			);
+			sourceTree = "<group>";
+		};
+		8A85C510212E2AB100F38B7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A85C50F212E2AB100F38B7C /* 诗云.app */,
+				8A85C521212E2AB300F38B7C /* 诗云Tests.xctest */,
+				8A85C52C212E2AB300F38B7C /* 诗云UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A85C511212E2AB100F38B7C /* 诗云 */ = {
+			isa = PBXGroup;
+			children = (
+				8A85C53E212E2EEE00F38B7C /* 诗云.entitlements */,
+				8A95BCBA21316C03005F128F /* AppUtils.swift */,
+				8A85C512212E2AB100F38B7C /* AppDelegate.swift */,
+				8A85C514212E2AB100F38B7C /* ViewController.swift */,
+				8AB3EC8C212F8F13008CB24E /* PoemStruct.swift */,
+				8A15D2CC213182EC00078A32 /* PoemDetailViewController.swift */,
+				8A85C516212E2AB300F38B7C /* Assets.xcassets */,
+				8A85C518212E2AB300F38B7C /* Main.storyboard */,
+				8A630DD4212EE85800B9EF51 /* Info.plist */,
+				8A85C51C212E2AB300F38B7C /* __.entitlements */,
+			);
+			path = "诗云";
+			sourceTree = "<group>";
+		};
+		8A85C524212E2AB300F38B7C /* 诗云Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8A85C525212E2AB300F38B7C /* __Tests.swift */,
+				8A85C527212E2AB300F38B7C /* Info.plist */,
+			);
+			path = "诗云Tests";
+			sourceTree = "<group>";
+		};
+		8A85C52F212E2AB300F38B7C /* 诗云UITests */ = {
+			isa = PBXGroup;
+			children = (
+				8A85C530212E2AB300F38B7C /* __UITests.swift */,
+				8A85C532212E2AB300F38B7C /* Info.plist */,
+			);
+			path = "诗云UITests";
+			sourceTree = "<group>";
+		};
+		CBE0270A3C4B1C8B22C6B829 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A630DD1212EAE5000B9EF51 /* libKanna.a */,
+				675091C5AFA1111A19893916 /* libPods-诗云.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A85C50E212E2AB100F38B7C /* 诗云 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A85C535212E2AB300F38B7C /* Build configuration list for PBXNativeTarget "诗云" */;
+			buildPhases = (
+				4ED4516496941D5529C73423 /* [CP] Check Pods Manifest.lock */,
+				8A85C50B212E2AB100F38B7C /* Sources */,
+				8A85C50C212E2AB100F38B7C /* Frameworks */,
+				8A85C50D212E2AB100F38B7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "诗云";
+			productName = "诗云";
+			productReference = 8A85C50F212E2AB100F38B7C /* 诗云.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8A85C520212E2AB300F38B7C /* 诗云Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A85C538212E2AB300F38B7C /* Build configuration list for PBXNativeTarget "诗云Tests" */;
+			buildPhases = (
+				8A85C51D212E2AB300F38B7C /* Sources */,
+				8A85C51E212E2AB300F38B7C /* Frameworks */,
+				8A85C51F212E2AB300F38B7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A85C523212E2AB300F38B7C /* PBXTargetDependency */,
+			);
+			name = "诗云Tests";
+			productName = "诗云Tests";
+			productReference = 8A85C521212E2AB300F38B7C /* 诗云Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8A85C52B212E2AB300F38B7C /* 诗云UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A85C53B212E2AB300F38B7C /* Build configuration list for PBXNativeTarget "诗云UITests" */;
+			buildPhases = (
+				8A85C528212E2AB300F38B7C /* Sources */,
+				8A85C529212E2AB300F38B7C /* Frameworks */,
+				8A85C52A212E2AB300F38B7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A85C52E212E2AB300F38B7C /* PBXTargetDependency */,
+			);
+			name = "诗云UITests";
+			productName = "诗云UITests";
+			productReference = 8A85C52C212E2AB300F38B7C /* 诗云UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A85C507212E2AB100F38B7C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "法好";
+				TargetAttributes = {
+					8A85C50E212E2AB100F38B7C = {
+						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					8A85C520212E2AB300F38B7C = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 8A85C50E212E2AB100F38B7C;
+					};
+					8A85C52B212E2AB300F38B7C = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 8A85C50E212E2AB100F38B7C;
+					};
+				};
+			};
+			buildConfigurationList = 8A85C50A212E2AB100F38B7C /* Build configuration list for PBXProject "诗云" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8A85C506212E2AB100F38B7C;
+			productRefGroup = 8A85C510212E2AB100F38B7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A85C50E212E2AB100F38B7C /* 诗云 */,
+				8A85C520212E2AB300F38B7C /* 诗云Tests */,
+				8A85C52B212E2AB300F38B7C /* 诗云UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A85C50D212E2AB100F38B7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A85C517212E2AB300F38B7C /* Assets.xcassets in Resources */,
+				8A85C51A212E2AB300F38B7C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A85C51F212E2AB300F38B7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A85C52A212E2AB300F38B7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4ED4516496941D5529C73423 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-诗云-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A85C50B212E2AB100F38B7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A15D2CD213182EC00078A32 /* PoemDetailViewController.swift in Sources */,
+				8AB3EC8D212F8F13008CB24E /* PoemStruct.swift in Sources */,
+				8AE5BC402132A4C000C4033E /* RMBlurredView.m in Sources */,
+				8A85C515212E2AB100F38B7C /* ViewController.swift in Sources */,
+				8A85C513212E2AB100F38B7C /* AppDelegate.swift in Sources */,
+				8A95BCBB21316C03005F128F /* AppUtils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A85C51D212E2AB300F38B7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A85C526212E2AB300F38B7C /* __Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A85C528212E2AB300F38B7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A85C531212E2AB300F38B7C /* __UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A85C523212E2AB300F38B7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A85C50E212E2AB100F38B7C /* 诗云 */;
+			targetProxy = 8A85C522212E2AB300F38B7C /* PBXContainerItemProxy */;
+		};
+		8A85C52E212E2AB300F38B7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A85C50E212E2AB100F38B7C /* 诗云 */;
+			targetProxy = 8A85C52D212E2AB300F38B7C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8A630DD4212EE85800B9EF51 /* Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A630DD5212EE8F900B9EF51 /* en */,
+			);
+			name = Info.plist;
+			sourceTree = "<group>";
+		};
+		8A85C518212E2AB300F38B7C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A85C519212E2AB300F38B7C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A85C533212E2AB300F38B7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8A85C534212E2AB300F38B7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		8A85C536212E2AB300F38B7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B10D893A622491335E845C5E /* Pods-诗云.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "诗云/诗云.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 24XARD42BP;
+				INFOPLIST_FILE = "诗云/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = yue.poem.shi.yun;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "诗云-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		8A85C537212E2AB300F38B7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 895D91E49C380BC47F4B200B /* Pods-诗云.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "诗云/诗云.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 24XARD42BP;
+				INFOPLIST_FILE = "诗云/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = yue.poem.shi.yun;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "诗云-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		8A85C539212E2AB300F38B7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = F6EKR37AV8;
+				INFOPLIST_FILE = "诗云Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "yue.poem.cloud.--Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/诗云.app/Contents/MacOS/诗云";
+			};
+			name = Debug;
+		};
+		8A85C53A212E2AB300F38B7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = F6EKR37AV8;
+				INFOPLIST_FILE = "诗云Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "yue.poem.cloud.--Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/诗云.app/Contents/MacOS/诗云";
+			};
+			name = Release;
+		};
+		8A85C53C212E2AB300F38B7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = F6EKR37AV8;
+				INFOPLIST_FILE = "诗云UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "yue.poem.cloud.--UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = "诗云";
+			};
+			name = Debug;
+		};
+		8A85C53D212E2AB300F38B7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = F6EKR37AV8;
+				INFOPLIST_FILE = "诗云UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "yue.poem.cloud.--UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = "诗云";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A85C50A212E2AB100F38B7C /* Build configuration list for PBXProject "诗云" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A85C533212E2AB300F38B7C /* Debug */,
+				8A85C534212E2AB300F38B7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A85C535212E2AB300F38B7C /* Build configuration list for PBXNativeTarget "诗云" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A85C536212E2AB300F38B7C /* Debug */,
+				8A85C537212E2AB300F38B7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A85C538212E2AB300F38B7C /* Build configuration list for PBXNativeTarget "诗云Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A85C539212E2AB300F38B7C /* Debug */,
+				8A85C53A212E2AB300F38B7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A85C53B212E2AB300F38B7C /* Build configuration list for PBXNativeTarget "诗云UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A85C53C212E2AB300F38B7C /* Debug */,
+				8A85C53D212E2AB300F38B7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A85C507212E2AB100F38B7C /* Project object */;
+}

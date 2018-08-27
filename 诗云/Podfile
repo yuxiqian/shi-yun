@@ -1,0 +1,4 @@
+platform :macos, '10.14'
+target '诗云' do
+pod 'Kanna', '~> 4.0.0'
+end

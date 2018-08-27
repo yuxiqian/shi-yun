@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>zh_CN</string>
+	<key>CFBundleDisplayName</key>
+	<true/>
+	<key>CFBundleExecutable</key>
+	<string>诗云</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.6</string>
+	<key>CFBundleVersion</key>
+	<string>16</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.education</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSHumanReadableCopyright</key>
+	<string>所有数据来自 gushiwen.org。
+Copyright 2018 古诗文网。
+
+「诗云」软件
+Made with love in the summer of 2018.
+</string>
+	<key>NSMainStoryboardFile</key>
+	<string>Main</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>NSServices</key>
+	<array>
+		<dict>
+			<key>NSMenuItem</key>
+			<dict>
+				<key>default</key>
+				<string>在「诗云」中检索此段诗文</string>
+			</dict>
+			<key>NSMessage</key>
+			<string>searchShiwenPiece</string>
+			<key>NSPortName</key>
+			<string>searchShiwenPiece</string>
+			<key>NSReturnTypes</key>
+			<array>
+				<string>None</string>
+			</array>
+			<key>NSSendFileTypes</key>
+			<array>
+				<string>String</string>
+			</array>
+			<key>NSSendTypes</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>NSMenuItem</key>
+			<dict>
+				<key>default</key>
+				<string>在「诗云」中检索此作者</string>
+			</dict>
+			<key>NSMessage</key>
+			<string>searchAuthor</string>
+			<key>NSPortName</key>
+			<string>searchAuthor</string>
+			<key>NSReturnTypes</key>
+			<array>
+				<string>None</string>
+			</array>
+			<key>NSSendFileTypes</key>
+			<array>
+				<string>String</string>
+			</array>
+			<key>NSSendTypes</key>
+			<string></string>
+		</dict>
+	</array>
+</dict>
+</plist>
