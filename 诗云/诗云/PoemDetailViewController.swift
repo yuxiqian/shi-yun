@@ -40,6 +40,7 @@ class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+
         let userDefaults = UserDefaults.standard
         contentField.isEditable = false
         isAutoLayout = userDefaults.bool(forKey: PreferenceKey.autoLayout)
@@ -48,10 +49,11 @@ class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
         } else {
             autoNewLine.state = NSControl.StateValue.off
         }
-        
         fontSize = userDefaults.integer(forKey: PreferenceKey.fontSizePoint)
         fontSizeSlider.intValue = Int32(self.fontSize)
         fontSizeDisplay.stringValue = "字号  \(self.fontSize)"
+        
+
         writeContent()
     }
 
