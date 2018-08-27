@@ -2,8 +2,8 @@
 //  AppUtils.swift
 //  诗云
 //
-//  Created by 法好 on 2018/8/25.
-//  Copyright © 2018 法好. All rights reserved.
+//  Created by yuxiqian on 2018/8/25.
+//  Copyright © 2018 yuxiqian. All rights reserved.
 //
 
 import Foundation

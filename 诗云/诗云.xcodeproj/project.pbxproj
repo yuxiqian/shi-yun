@@ -15,9 +15,11 @@
 		8A85C517212E2AB300F38B7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A85C516212E2AB300F38B7C /* Assets.xcassets */; };
 		8A85C51A212E2AB300F38B7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A85C518212E2AB300F38B7C /* Main.storyboard */; };
 		8A95BCBB21316C03005F128F /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95BCBA21316C03005F128F /* AppUtils.swift */; };
+		8AAE3AFB2134252200E9C302 /* PreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAE3AFA2134252200E9C302 /* PreferenceKey.swift */; };
 		8AB3EC8D212F8F13008CB24E /* PoemStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3EC8C212F8F13008CB24E /* PoemStruct.swift */; };
 		8AE5BC402132A4C000C4033E /* RMBlurredView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE5BC3F2132A4BF00C4033E /* RMBlurredView.m */; };
 		8AF07AFF2133F718006510EA /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF07AFE2133F718006510EA /* WindowController.swift */; };
+		8AFBA00E2134246300BCFF6C /* PrefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFBA00D2134246300BCFF6C /* PrefViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,11 +55,13 @@
 		8A85C52C212E2AB300F38B7C /* 诗云UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "诗云UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A85C53E212E2EEE00F38B7C /* 诗云.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "诗云.entitlements"; sourceTree = "<group>"; };
 		8A95BCBA21316C03005F128F /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
+		8AAE3AFA2134252200E9C302 /* PreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKey.swift; sourceTree = "<group>"; };
 		8AB3EC8C212F8F13008CB24E /* PoemStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemStruct.swift; sourceTree = "<group>"; };
 		8AE5BC3D2132A4BE00C4033E /* 诗云-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "诗云-Bridging-Header.h"; sourceTree = "<group>"; };
 		8AE5BC3E2132A4BF00C4033E /* RMBlurredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMBlurredView.h; path = RMBlurredView/RMBlurredView.h; sourceTree = "<group>"; };
 		8AE5BC3F2132A4BF00C4033E /* RMBlurredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMBlurredView.m; path = RMBlurredView/RMBlurredView.m; sourceTree = "<group>"; };
 		8AF07AFE2133F718006510EA /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		8AFBA00D2134246300BCFF6C /* PrefViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefViewController.swift; sourceTree = "<group>"; };
 		B10D893A622491335E845C5E /* Pods-诗云.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-诗云.debug.xcconfig"; path = "Pods/Target Support Files/Pods-诗云/Pods-诗云.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +131,8 @@
 				8A95BCBA21316C03005F128F /* AppUtils.swift */,
 				8A85C512212E2AB100F38B7C /* AppDelegate.swift */,
 				8A85C514212E2AB100F38B7C /* ViewController.swift */,
+				8AAE3AFA2134252200E9C302 /* PreferenceKey.swift */,
+				8AFBA00D2134246300BCFF6C /* PrefViewController.swift */,
 				8AB3EC8C212F8F13008CB24E /* PoemStruct.swift */,
 				8A15D2CC213182EC00078A32 /* PoemDetailViewController.swift */,
 				8AF07AFE2133F718006510EA /* WindowController.swift */,
@@ -309,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AAE3AFB2134252200E9C302 /* PreferenceKey.swift in Sources */,
 				8A15D2CD213182EC00078A32 /* PoemDetailViewController.swift in Sources */,
 				8AB3EC8D212F8F13008CB24E /* PoemStruct.swift in Sources */,
 				8AE5BC402132A4C000C4033E /* RMBlurredView.m in Sources */,
@@ -316,6 +323,7 @@
 				8A85C515212E2AB100F38B7C /* ViewController.swift in Sources */,
 				8A85C513212E2AB100F38B7C /* AppDelegate.swift in Sources */,
 				8A95BCBB21316C03005F128F /* AppUtils.swift in Sources */,
+				8AFBA00E2134246300BCFF6C /* PrefViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

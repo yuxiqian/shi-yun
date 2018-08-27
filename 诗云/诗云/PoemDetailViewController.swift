@@ -2,8 +2,8 @@
 //  poemDetailViewController.swift
 //  诗云
 //
-//  Created by 法好 on 2018/8/25.
-//  Copyright © 2018 法好. All rights reserved.
+//  Created by yuxiqian on 2018/8/25.
+//  Copyright © 2018 yuxiqian. All rights reserved.
 //
 
 import Cocoa
@@ -18,6 +18,9 @@ class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
     @IBOutlet weak var fontSizeSlider: NSSlider!
     @IBOutlet weak var fontSizeDisplay: NSTextField!
     
+    var isAutoLayout = false
+    
+    
     @IBAction func fontSizeChanger(_ sender: NSSlider) {
         self.fontSize = Int(fontSizeSlider.intValue)
         fontSizeDisplay.stringValue = "字号  \(self.fontSize)"
@@ -26,7 +29,6 @@ class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
     @IBAction func onChecked(_ sender: NSButton) {
         writeContent()
     }
-    
     
     @objc dynamic var poemTitle = "静夜思"
     @objc dynamic var poemAuthor = "李白"
@@ -38,7 +40,18 @@ class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        let userDefaults = UserDefaults.standard
         contentField.isEditable = false
+        isAutoLayout = userDefaults.bool(forKey: PreferenceKey.autoLayout)
+        if isAutoLayout {
+            autoNewLine.state = NSControl.StateValue.on
+        } else {
+            autoNewLine.state = NSControl.StateValue.off
+        }
+        
+        fontSize = userDefaults.integer(forKey: PreferenceKey.fontSizePoint)
+        fontSizeSlider.intValue = Int32(self.fontSize)
+        fontSizeDisplay.stringValue = "字号  \(self.fontSize)"
         writeContent()
     }
 

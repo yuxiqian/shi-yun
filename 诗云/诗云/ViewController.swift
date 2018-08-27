@@ -2,16 +2,20 @@
 //  ViewController.swift
 //  诗云
 //
-//  Created by 法好 on 2018/8/23.
-//  Copyright © 2018 法好. All rights reserved.
+//  Created by yuxiqian on 2018/8/23.
+//  Copyright © 2018 yuxiqian. All rights reserved.
 //
 
 import Cocoa
 import Kanna
 
 class ViewController: NSViewController, NSTouchBarDelegate {
+    
+    var isAutoSuggest = false
+
+
     override func viewDidLoad() {
-        
+
         super.viewDidLoad()
         self.view.wantsLayer = true
         
@@ -31,14 +35,17 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         tableView.tableColumns[1].sortDescriptorPrototype = sortByAuthor
         tableView.tableColumns[2].sortDescriptorPrototype = sortByDynasty
         tableView.tableColumns[3].sortDescriptorPrototype = sortByContent
+        updateSettings()
+        if (isAutoSuggest) {
+            loadTodaySuggest(self)
+        }
 //        loadMoreButton.isHidden = true
-//        start the session in advance
-//        startSession(sessionUrl: "https://so.gushiwen.org/")
-//        Do any additional setup after loading the view.
-//        addTableItem(toBeAdded: Poem(Title: "春晓", Author: "白居易", Dynasty: "唐朝", Content: "春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。"))
     }
     
-
+    func updateSettings() {
+        let userDefaults = UserDefaults.standard
+        isAutoSuggest = userDefaults.bool(forKey: PreferenceKey.autoLoadSuggest)
+    }
 
     @IBOutlet weak var pieceTextField: NSSearchField!
     @IBOutlet weak var searchButton: NSButton!
@@ -47,7 +54,8 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var loadingIcon: NSProgressIndicator!
     @IBOutlet weak var loadProgressIndicator: NSProgressIndicator!
-
+    @IBOutlet weak var statusBar: NSTextField!
+    
     
     
     @available(OSX 10.12.2, *)
@@ -102,6 +110,12 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         self.loadProgressIndicator.doubleValue = progress * 100
     }
     
+    @IBAction func goToWebsite(_ sender: NSButton) {
+        if let url = URL(string: "https://www.gushiwen.org"), NSWorkspace.shared.open(url) {
+            // successfully opened
+        }
+    }
+    
     @IBAction func loadTodaySuggest(_ sender: Any) {
         loadToTheEnd = true
         globalQueue.suspend()
@@ -144,6 +158,10 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     }
     
     func sortArray(_ sortKey: String, _ isAscend: Bool) {
+        if (poemArray.count == 0) {
+            return
+        }
+        var sortComment = "按照"
         switch(sortKey) {
         case "sortByTitle":
             globalQueue.async {
@@ -153,7 +171,7 @@ class ViewController: NSViewController, NSTouchBarDelegate {
                 self.poemArray.sort(by: titleSorter)
                 self.refreshTableView()
             }
-            //            NSLog("准备按照标题排序")
+            sortComment += "标题"
             break
         case "sortByAuthor":
             globalQueue.async {
@@ -163,6 +181,7 @@ class ViewController: NSViewController, NSTouchBarDelegate {
                 self.poemArray.sort(by: authorSorter)
                 self.refreshTableView()
             }
+            sortComment += "作者"
             break
         case "sortByDynasty":
             globalQueue.async {
@@ -172,6 +191,7 @@ class ViewController: NSViewController, NSTouchBarDelegate {
                 self.poemArray.sort(by: dynastySorter)
                 self.refreshTableView()
             }
+            sortComment += "朝代"
             break
         case "sortByContent":
             globalQueue.async {
@@ -181,13 +201,22 @@ class ViewController: NSViewController, NSTouchBarDelegate {
                 self.poemArray.sort(by: contentSorter)
                 self.refreshTableView()
             }
+            sortComment += "内容"
             break
         case "badSortArgument":
             showErrorMessage(errorMsg: "排序参数出错。")
+            sortComment += "未知参数"
             break
         default:
             break
         }
+        if (isAscend) {
+            sortComment += "降序排序"
+        } else {
+            sortComment += "升序排序"
+        }
+        sortComment += "了 \(poemArray.count) 首诗。"
+        self.statusBar.stringValue = sortComment
     }
 
     
@@ -197,6 +226,7 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         popUpSelector.isEnabled = false
         loadingIcon.isHidden = false
         loadProgressIndicator.isHidden = false
+        statusBar.stringValue = ""
     }
     
     func refreshTableView() {
@@ -215,6 +245,8 @@ class ViewController: NSViewController, NSTouchBarDelegate {
             showErrorMessage(errorMsg: "没有找到包含“\(pieceTextField.stringValue)”的\(popUpSelector.selectedItem?.title ?? """
                 内容。
                 """)。\n\n检查关键字设定和网络连接并重试。")
+        } else {
+            statusBar.stringValue = "已成功加载 \(poemArray.count) 首诗。"
         }
     }
     
@@ -423,6 +455,15 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     }
     
 
+    
+    func updateStatusBar() {
+        guard tableView.selectedRow >= 0,
+            let selectedItem = poemArray[tableView.selectedRow] else {
+                self.statusBar.stringValue = ""
+                return
+        }
+        self.statusBar.stringValue = "选中了\(selectedItem.dynasty)\(selectedItem.author)的作品\(selectedItem.title)。"
+    }
 }
 
 
@@ -448,6 +489,10 @@ extension ViewController: NSTableViewDelegate {
         static let authorCell = "authorCell"
         static let dynastyCell = "dynastyCell"
         static let contentCell = "contentCell"
+    }
+    
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        updateStatusBar()
     }
     
     func tableView(_ tableView: NSTableView, viewFor
@@ -481,6 +526,7 @@ extension ViewController: NSTableViewDelegate {
     }
     
     @objc func tableViewDoubleClick(_ sender:AnyObject) {
+        updateSettings()
         guard tableView.selectedRow >= 0,
             let selPoem = poemArray[tableView.selectedRow] else {
                 return
@@ -495,7 +541,6 @@ extension ViewController: NSTableViewDelegate {
             poemDetailViewController.poemAuthor = selPoem.author
             poemDetailViewController.poemDynasty = selPoem.dynasty
             poemDetailViewController.poemContent = selPoem.content
-            poemDetailViewController.poemParsedContent = manageParagraph(parsedString: selPoem.content)
 //            let application = NSApplication.shared
 //            application.runModal(for: poemDetailWindow)
 //            poemDetailWindow.close()
