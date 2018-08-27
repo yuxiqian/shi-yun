@@ -13,35 +13,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet var window: NSWindow!
     
-    var blurryView = NSVisualEffectView(frame: NSRect(x: 0, y: 0, width: 800, height: 600))
-
-    func searchShiwenPiece() {
-        
-    }
+//    var isServiceCalled = false
+//    var serviceQueryText = ""
+//    var serviceQueryAuthor = ""
     
-    func searchAuthor() {
-        
-    }
+    var blurryView = NSVisualEffectView(frame: NSRect(x: 0, y: 0, width: 720, height: 480))
 
-    
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
     }
 
-
     func applicationDidFinishLaunching(aNotification: NSNotification?) {
-        
-        // this is default value but is here for clarity
         blurryView.blendingMode = NSVisualEffectView.BlendingMode.behindWindow
-        
-        // set the background to always be the dark blur
         blurryView.material = NSVisualEffectView.Material.dark
-        
-        // set it to always be blurry regardless of window state
         blurryView.state = NSVisualEffectView.State.active
-        
         self.window.contentView!.addSubview(blurryView)
-
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

@@ -42,50 +42,5 @@ Made with love in the summer of 2018.
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>NSServices</key>
-	<array>
-		<dict>
-			<key>NSMenuItem</key>
-			<dict>
-				<key>default</key>
-				<string>在「诗云」中检索此段诗文</string>
-			</dict>
-			<key>NSMessage</key>
-			<string>searchShiwenPiece</string>
-			<key>NSPortName</key>
-			<string>searchShiwenPiece</string>
-			<key>NSReturnTypes</key>
-			<array>
-				<string>None</string>
-			</array>
-			<key>NSSendFileTypes</key>
-			<array>
-				<string>String</string>
-			</array>
-			<key>NSSendTypes</key>
-			<string></string>
-		</dict>
-		<dict>
-			<key>NSMenuItem</key>
-			<dict>
-				<key>default</key>
-				<string>在「诗云」中检索此作者</string>
-			</dict>
-			<key>NSMessage</key>
-			<string>searchAuthor</string>
-			<key>NSPortName</key>
-			<string>searchAuthor</string>
-			<key>NSReturnTypes</key>
-			<array>
-				<string>None</string>
-			</array>
-			<key>NSSendFileTypes</key>
-			<array>
-				<string>String</string>
-			</array>
-			<key>NSSendTypes</key>
-			<string></string>
-		</dict>
-	</array>
 </dict>
 </plist>

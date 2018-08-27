@@ -14,11 +14,10 @@
 		8A85C515212E2AB100F38B7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85C514212E2AB100F38B7C /* ViewController.swift */; };
 		8A85C517212E2AB300F38B7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A85C516212E2AB300F38B7C /* Assets.xcassets */; };
 		8A85C51A212E2AB300F38B7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A85C518212E2AB300F38B7C /* Main.storyboard */; };
-		8A85C526212E2AB300F38B7C /* __Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85C525212E2AB300F38B7C /* __Tests.swift */; };
-		8A85C531212E2AB300F38B7C /* __UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85C530212E2AB300F38B7C /* __UITests.swift */; };
 		8A95BCBB21316C03005F128F /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95BCBA21316C03005F128F /* AppUtils.swift */; };
 		8AB3EC8D212F8F13008CB24E /* PoemStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3EC8C212F8F13008CB24E /* PoemStruct.swift */; };
 		8AE5BC402132A4C000C4033E /* RMBlurredView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE5BC3F2132A4BF00C4033E /* RMBlurredView.m */; };
+		8AF07AFF2133F718006510EA /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF07AFE2133F718006510EA /* WindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,17 +50,14 @@
 		8A85C519212E2AB300F38B7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A85C51C212E2AB300F38B7C /* __.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = __.entitlements; sourceTree = "<group>"; };
 		8A85C521212E2AB300F38B7C /* 诗云Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "诗云Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A85C525212E2AB300F38B7C /* __Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __Tests.swift; sourceTree = "<group>"; };
-		8A85C527212E2AB300F38B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A85C52C212E2AB300F38B7C /* 诗云UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "诗云UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A85C530212E2AB300F38B7C /* __UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __UITests.swift; sourceTree = "<group>"; };
-		8A85C532212E2AB300F38B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A85C53E212E2EEE00F38B7C /* 诗云.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "诗云.entitlements"; sourceTree = "<group>"; };
 		8A95BCBA21316C03005F128F /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
 		8AB3EC8C212F8F13008CB24E /* PoemStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemStruct.swift; sourceTree = "<group>"; };
 		8AE5BC3D2132A4BE00C4033E /* 诗云-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "诗云-Bridging-Header.h"; sourceTree = "<group>"; };
 		8AE5BC3E2132A4BF00C4033E /* RMBlurredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMBlurredView.h; path = RMBlurredView/RMBlurredView.h; sourceTree = "<group>"; };
 		8AE5BC3F2132A4BF00C4033E /* RMBlurredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMBlurredView.m; path = RMBlurredView/RMBlurredView.m; sourceTree = "<group>"; };
+		8AF07AFE2133F718006510EA /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		B10D893A622491335E845C5E /* Pods-诗云.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-诗云.debug.xcconfig"; path = "Pods/Target Support Files/Pods-诗云/Pods-诗云.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,8 +103,6 @@
 				8AE5BC3E2132A4BF00C4033E /* RMBlurredView.h */,
 				8AE5BC3F2132A4BF00C4033E /* RMBlurredView.m */,
 				8A85C511212E2AB100F38B7C /* 诗云 */,
-				8A85C524212E2AB300F38B7C /* 诗云Tests */,
-				8A85C52F212E2AB300F38B7C /* 诗云UITests */,
 				8A85C510212E2AB100F38B7C /* Products */,
 				80C58A35E04A5C94287CB36D /* Pods */,
 				CBE0270A3C4B1C8B22C6B829 /* Frameworks */,
@@ -135,30 +129,13 @@
 				8A85C514212E2AB100F38B7C /* ViewController.swift */,
 				8AB3EC8C212F8F13008CB24E /* PoemStruct.swift */,
 				8A15D2CC213182EC00078A32 /* PoemDetailViewController.swift */,
+				8AF07AFE2133F718006510EA /* WindowController.swift */,
 				8A85C516212E2AB300F38B7C /* Assets.xcassets */,
 				8A85C518212E2AB300F38B7C /* Main.storyboard */,
 				8A630DD4212EE85800B9EF51 /* Info.plist */,
 				8A85C51C212E2AB300F38B7C /* __.entitlements */,
 			);
 			path = "诗云";
-			sourceTree = "<group>";
-		};
-		8A85C524212E2AB300F38B7C /* 诗云Tests */ = {
-			isa = PBXGroup;
-			children = (
-				8A85C525212E2AB300F38B7C /* __Tests.swift */,
-				8A85C527212E2AB300F38B7C /* Info.plist */,
-			);
-			path = "诗云Tests";
-			sourceTree = "<group>";
-		};
-		8A85C52F212E2AB300F38B7C /* 诗云UITests */ = {
-			isa = PBXGroup;
-			children = (
-				8A85C530212E2AB300F38B7C /* __UITests.swift */,
-				8A85C532212E2AB300F38B7C /* Info.plist */,
-			);
-			path = "诗云UITests";
 			sourceTree = "<group>";
 		};
 		CBE0270A3C4B1C8B22C6B829 /* Frameworks */ = {
@@ -335,6 +312,7 @@
 				8A15D2CD213182EC00078A32 /* PoemDetailViewController.swift in Sources */,
 				8AB3EC8D212F8F13008CB24E /* PoemStruct.swift in Sources */,
 				8AE5BC402132A4C000C4033E /* RMBlurredView.m in Sources */,
+				8AF07AFF2133F718006510EA /* WindowController.swift in Sources */,
 				8A85C515212E2AB100F38B7C /* ViewController.swift in Sources */,
 				8A85C513212E2AB100F38B7C /* AppDelegate.swift in Sources */,
 				8A95BCBB21316C03005F128F /* AppUtils.swift in Sources */,
@@ -345,7 +323,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A85C526212E2AB300F38B7C /* __Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +330,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A85C531212E2AB300F38B7C /* __UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

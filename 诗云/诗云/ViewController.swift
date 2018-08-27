@@ -9,7 +9,7 @@
 import Cocoa
 import Kanna
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, NSTouchBarDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -37,6 +37,7 @@ class ViewController: NSViewController {
 //        Do any additional setup after loading the view.
 //        addTableItem(toBeAdded: Poem(Title: "春晓", Author: "白居易", Dynasty: "唐朝", Content: "春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。"))
     }
+    
 
 
     @IBOutlet weak var pieceTextField: NSSearchField!
@@ -47,6 +48,47 @@ class ViewController: NSViewController {
     @IBOutlet weak var loadingIcon: NSProgressIndicator!
     @IBOutlet weak var loadProgressIndicator: NSProgressIndicator!
 
+    
+    
+    @available(OSX 10.12.2, *)
+    override func makeTouchBar() -> NSTouchBar? {
+        let touchBar = NSTouchBar()
+        touchBar.delegate = self
+        touchBar.defaultItemIdentifiers = [NSTouchBarItem.Identifier("searchContext"), NSTouchBarItem.Identifier("searchAuthor"), NSTouchBarItem.Identifier("loadSuggest")]
+        return touchBar
+    }
+    
+
+    
+    @available(OSX 10.12.2, *)
+    func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
+        let touchBarItem = NSCustomTouchBarItem(identifier: identifier)
+        switch identifier {
+        case NSTouchBarItem.Identifier("searchContext"):
+            touchBarItem.view = NSButton(title: "搜索诗文", target: self, action: #selector(touchBarSearchContext(_:)))
+            break
+        case NSTouchBarItem.Identifier("searchAuthor"):
+            touchBarItem.view = NSButton(title: "搜索作者", target: self, action: #selector(touchBarSearchAuthor(_:)))
+            break
+        case NSTouchBarItem.Identifier("loadSuggest"):
+            touchBarItem.view = NSButton(title: "加载今日推荐", target: self, action: #selector(loadTodaySuggest(_:)))
+            break
+        default:
+            touchBarItem.view = NSButton(title: "defaultButton", target: self, action: nil)
+            break
+        }
+        return touchBarItem
+    }
+    
+    @objc func touchBarSearchContext(_ sender: NSButton) {
+        self.popUpSelector.selectItem(at: 0)
+        self.searchButtonPressed(searchButton)
+    }
+    
+    @objc func touchBarSearchAuthor(_ sender: NSButton) {
+        self.popUpSelector.selectItem(at: 1)
+        self.searchButtonPressed(searchButton)
+    }
     
     func updateLoadProgress(_ progress: Double) {
         NSLog("Value: \(progress)")
