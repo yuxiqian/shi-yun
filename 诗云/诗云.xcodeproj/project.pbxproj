@@ -14,6 +14,7 @@
 		8A85C515212E2AB100F38B7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85C514212E2AB100F38B7C /* ViewController.swift */; };
 		8A85C517212E2AB300F38B7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A85C516212E2AB300F38B7C /* Assets.xcassets */; };
 		8A85C51A212E2AB300F38B7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A85C518212E2AB300F38B7C /* Main.storyboard */; };
+		8A935C922134D1B400604D11 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A935C912134D1B400604D11 /* CreditsViewController.swift */; };
 		8A95BCBB21316C03005F128F /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95BCBA21316C03005F128F /* AppUtils.swift */; };
 		8AAE3AFB2134252200E9C302 /* PreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAE3AFA2134252200E9C302 /* PreferenceKey.swift */; };
 		8AB3EC8D212F8F13008CB24E /* PoemStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3EC8C212F8F13008CB24E /* PoemStruct.swift */; };
@@ -54,6 +55,7 @@
 		8A85C521212E2AB300F38B7C /* 诗云Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "诗云Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A85C52C212E2AB300F38B7C /* 诗云UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "诗云UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A85C53E212E2EEE00F38B7C /* 诗云.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "诗云.entitlements"; sourceTree = "<group>"; };
+		8A935C912134D1B400604D11 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		8A95BCBA21316C03005F128F /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
 		8AAE3AFA2134252200E9C302 /* PreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKey.swift; sourceTree = "<group>"; };
 		8AB3EC8C212F8F13008CB24E /* PoemStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemStruct.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				8A85C53E212E2EEE00F38B7C /* 诗云.entitlements */,
+				8A935C912134D1B400604D11 /* CreditsViewController.swift */,
 				8A95BCBA21316C03005F128F /* AppUtils.swift */,
 				8A85C512212E2AB100F38B7C /* AppDelegate.swift */,
 				8A85C514212E2AB100F38B7C /* ViewController.swift */,
@@ -324,6 +327,7 @@
 				8A85C513212E2AB100F38B7C /* AppDelegate.swift in Sources */,
 				8A95BCBB21316C03005F128F /* AppUtils.swift in Sources */,
 				8AFBA00E2134246300BCFF6C /* PrefViewController.swift in Sources */,
+				8A935C922134D1B400604D11 /* CreditsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -105,11 +105,6 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         self.searchButtonPressed(searchButton)
     }
     
-    func updateLoadProgress(_ progress: Double) {
-        NSLog("Value: \(progress)")
-        self.loadProgressIndicator.doubleValue = progress * 100
-    }
-    
     @IBAction func goToWebsite(_ sender: NSButton) {
         if let url = URL(string: "https://www.gushiwen.org"), NSWorkspace.shared.open(url) {
             // successfully opened
@@ -136,8 +131,33 @@ class ViewController: NSViewController, NSTouchBarDelegate {
             })
         }
     }
+    
+    @IBAction func openPreferencePanel(_ sender: Any) {
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        let prefPanelController = storyboard.instantiateController(withIdentifier: "Preference Panel Controller") as! NSWindowController
+        if let prefPanel = prefPanelController.window {
+            let application = NSApplication.shared
+            application.runModal(for: prefPanel)
+            prefPanel.close()
+        }
+    }
+    
+    
+    @IBAction func openAcknowledgementsWindow(_ sender: Any) {
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        let acknowledgementsWindowController = storyboard.instantiateController(withIdentifier: "Acknowledgements Window Controller") as! NSWindowController
+        if let acknowledgementsWindow = acknowledgementsWindowController.window {
+            let application = NSApplication.shared
+            application.runModal(for: acknowledgementsWindow)
+            acknowledgementsWindow.close()
+        }
+    }
 
 
+    func updateLoadProgress(_ progress: Double) {
+        NSLog("Value: \(progress)")
+        self.loadProgressIndicator.doubleValue = progress * 100
+    }
     
     var maxPageCount = 1
     var poemArray: [Poem?] = []
@@ -158,7 +178,7 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     }
     
     func sortArray(_ sortKey: String, _ isAscend: Bool) {
-        if (poemArray.count == 0) {
+        if (poemArray.count <= 1) {
             return
         }
         var sortComment = "按照"

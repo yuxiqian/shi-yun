@@ -24,16 +24,21 @@ class PrefViewController: NSViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func OKAndClose(_ sender: NSButton) {
-        savePrefs()
-        self.view.window?.close()
-    }
+
     
     @IBAction func onSliderSlides(_ sender: NSSlider) {
         updateTextPrompt()
     }
+    
+    @IBAction func OKAndClose(_ sender: NSButton) {
+        savePrefs()
+        let application = NSApplication.shared
+        application.stopModal()
+    }
+    
     @IBAction func cancelAndClose(_ sender: NSButton) {
-        self.view.window?.close()
+        let application = NSApplication.shared
+        application.stopModal()
     }
     
     fileprivate func updateTextPrompt() {
@@ -71,3 +76,5 @@ class PrefViewController: NSViewController {
         userDefaults.set(fontSizeSlider.intValue, forKey: PreferenceKey.fontSizePoint)
     }
 }
+
+

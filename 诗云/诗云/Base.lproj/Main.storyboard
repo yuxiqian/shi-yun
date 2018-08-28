@@ -24,13 +24,13 @@
                                         <menuItem title="致谢" id="rcM-EP-59o">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <segue destination="fvh-Dp-UqL" kind="modal" id="TUL-UQ-qGl"/>
+                                                <action selector="openAcknowledgementsWindow:" target="Ady-hI-5gd" id="6cn-65-6a6"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="偏好设置…" keyEquivalent="," id="BOF-NM-1cW">
                                             <connections>
-                                                <segue destination="xWP-so-Kcu" kind="modal" id="Pjm-qU-Cni"/>
+                                                <action selector="openPreferencePanel:" target="Ady-hI-5gd" id="7Yp-8g-aD7"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
@@ -216,9 +216,9 @@
         <!--Window Controller-->
         <scene sceneID="JRh-SM-UgK">
             <objects>
-                <windowController storyboardIdentifier="prefWindow" id="xWP-so-Kcu" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="Preference Panel Controller" id="xWP-so-Kcu" sceneMemberID="viewController">
                     <window key="window" title="偏好设置" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="alertPanel" frameAutosaveName="" titlebarAppearsTransparent="YES" id="dOW-dC-VNo" customClass="NSFixedWindow">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="220" height="180"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
@@ -341,9 +341,9 @@
         <!--Window Controller-->
         <scene sceneID="XXy-Ek-jSO">
             <objects>
-                <windowController showSeguePresentationStyle="single" id="fvh-Dp-UqL" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="Acknowledgements Window Controller" showSeguePresentationStyle="single" id="fvh-Dp-UqL" sceneMemberID="viewController">
                     <window key="window" title="致谢" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingIdentifier="ackWindow" tabbingMode="disallowed" titlebarAppearsTransparent="YES" id="NZ2-32-tc4">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES" texturedBackground="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" texturedBackground="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="450" height="400"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
@@ -363,7 +363,7 @@
         <!--致谢-->
         <scene sceneID="Ig0-JE-tic">
             <objects>
-                <viewController title="致谢" id="9LQ-h5-ypH" sceneMemberID="viewController">
+                <viewController title="致谢" id="9LQ-h5-ypH" customClass="CreditsViewController" customModule="诗云" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" autoresizesSubviews="NO" id="8To-XR-hja" customClass="NSVisualEffectView">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="400"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -702,17 +702,6 @@ Copyright © 2015</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E1x-k5-368">
-                                <rect key="frame" x="191" y="7" width="67" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="push" title="关闭" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mer-Ty-mZB">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="performClose:" target="dJU-hc-QeM" id="bOU-B3-HPe"/>
-                                </connections>
-                            </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hC-wd-jc8">
                                 <rect key="frame" x="0.0" y="379" width="450" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -722,6 +711,17 @@ Copyright © 2015</string>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E1x-k5-368">
+                                <rect key="frame" x="192" y="5" width="67" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <buttonCell key="cell" type="push" title="关闭" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mer-Ty-mZB">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="closeWindow:" target="9LQ-h5-ypH" id="8Qc-V2-ly2"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                 </viewController>
