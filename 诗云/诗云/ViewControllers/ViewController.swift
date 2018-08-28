@@ -82,7 +82,7 @@ class ViewController: NSViewController, NSTouchBarDelegate {
             touchBarItem.view = NSButton(title: "👤 作者", target: self, action: #selector(touchBarSearchAuthor(_:)))
             break
         case NSTouchBarItem.Identifier("Separator"):
-            touchBarItem.view = NSTextField(labelWithString: "      ")
+            touchBarItem.view = NSScrubber()
             break
         case NSTouchBarItem.Identifier("loadSuggest"):
             touchBarItem.view = NSButton(title: "❤️ 推荐", target: self, action: #selector(loadTodaySuggest(_:)))

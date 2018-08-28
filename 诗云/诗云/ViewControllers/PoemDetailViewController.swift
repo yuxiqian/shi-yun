@@ -104,13 +104,13 @@ class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
             touchBarItem.view = NSTextField(labelWithString: "  文字  ")
             break
         case NSTouchBarItem.Identifier("biggerSize"):
-            touchBarItem.view = NSButton(title: "🔺 变大", target: self, action: #selector(biggerFontSize(_:)))
+            touchBarItem.view = NSButton(title: "🔺 更大", target: self, action: #selector(biggerFontSize(_:)))
             break
         case NSTouchBarItem.Identifier("Separator"):
-            touchBarItem.view = NSTextField(labelWithString: "      ")
+            touchBarItem.view = NSScrubber()
             break
         case NSTouchBarItem.Identifier("smallerSize"):
-            touchBarItem.view = NSButton(title: "🔻 变小", target: self, action: #selector(smallerFontize(_:)))
+            touchBarItem.view = NSButton(title: "🔻 更小", target: self, action: #selector(smallerFontize(_:)))
             break
         case NSTouchBarItem.Identifier("closePoem"):
             touchBarItem.view = NSButton(title: "❌ 关闭", target: self, action: #selector(closePoem(_:)))
