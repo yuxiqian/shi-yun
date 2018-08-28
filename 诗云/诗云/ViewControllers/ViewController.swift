@@ -57,7 +57,6 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     @IBOutlet weak var statusBar: NSTextField!
     
     
-    
     @available(OSX 10.12.2, *)
     override func makeTouchBar() -> NSTouchBar? {
         let touchBar = NSTouchBar()
@@ -80,7 +79,7 @@ class ViewController: NSViewController, NSTouchBarDelegate {
             touchBarItem.view = NSButton(title: "🔍 诗文", target: self, action: #selector(touchBarSearchContext(_:)))
             break
         case NSTouchBarItem.Identifier("searchAuthor"):
-            touchBarItem.view = NSButton(title: "🔎 作者", target: self, action: #selector(touchBarSearchAuthor(_:)))
+            touchBarItem.view = NSButton(title: "👤 作者", target: self, action: #selector(touchBarSearchAuthor(_:)))
             break
         case NSTouchBarItem.Identifier("Separator"):
             touchBarItem.view = NSTextField(labelWithString: "      ")
@@ -96,13 +95,24 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     }
     
     @objc func touchBarSearchContext(_ sender: NSButton) {
-        self.popUpSelector.selectItem(at: 0)
         self.searchButtonPressed(searchButton)
     }
     
     @objc func touchBarSearchAuthor(_ sender: NSButton) {
-        self.popUpSelector.selectItem(at: 1)
-        self.searchButtonPressed(searchButton)
+        doSearchAuthor(sender)
+
+    }
+    
+    @IBAction func doSearchAuthor(_ sender: NSButton) {
+        popUpSelector.selectItem(at: 1)
+        guard tableView.selectedRow >= 0,
+            let selectedItem = poemArray[tableView.selectedRow] else {
+                updateAuthorState()
+                return
+        }
+        self.pieceTextField.stringValue = selectedItem.author
+        searchButtonPressed(searchButton)
+        updateAuthorState()
     }
     
     @IBAction func goToWebsite(_ sender: NSButton) {
@@ -110,6 +120,7 @@ class ViewController: NSViewController, NSTouchBarDelegate {
             // successfully opened
         }
     }
+    
     
     @IBAction func loadTodaySuggest(_ sender: Any) {
         loadToTheEnd = true
@@ -478,9 +489,17 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         guard tableView.selectedRow >= 0,
             let selectedItem = poemArray[tableView.selectedRow] else {
                 self.statusBar.stringValue = ""
+                updateAuthorState()
                 return
         }
         self.statusBar.stringValue = "选中了\(selectedItem.dynasty)\(selectedItem.author)的作品\(selectedItem.title)。"
+        updateAuthorState(givenAuthor: selectedItem.author)
+    }
+    
+    func updateAuthorState(givenAuthor: String = "") {
+        if let appDel = NSApplication.shared.delegate as? AppDelegate {
+            appDel.setAuthorMenu(givenAuthor)
+        }
     }
 }
 

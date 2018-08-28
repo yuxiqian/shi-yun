@@ -12,7 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet var window: NSWindow!
-    
+    @IBOutlet weak var showAuthorMenuButton: NSMenuItem!
 //    var isServiceCalled = false
 //    var serviceQueryText = ""
 //    var serviceQueryAuthor = ""
@@ -22,12 +22,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
     }
-
+    
+    func setAuthorMenu(_ authorName: String = "") {
+        if authorName == "" {
+            showAuthorMenuButton.isEnabled = false
+            showAuthorMenuButton.title = "检索作者"
+        } else {
+            showAuthorMenuButton.isEnabled = true
+            showAuthorMenuButton.title = "检索作者「\(authorName)」"
+        }
+    }
+    
     func applicationDidFinishLaunching(aNotification: NSNotification?) {
         blurryView.blendingMode = NSVisualEffectView.BlendingMode.behindWindow
         blurryView.material = NSVisualEffectView.Material.dark
         blurryView.state = NSVisualEffectView.State.active
         self.window.contentView!.addSubview(blurryView)
+        setAuthorMenu()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

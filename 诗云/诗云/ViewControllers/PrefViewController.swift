@@ -53,6 +53,7 @@ class PrefViewController: NSViewController {
             ]
         userDefaults.register(defaults: defaultPreferences)
     }
+
     
     fileprivate func loadPrefs() {
         if (userDefaults.bool(forKey: PreferenceKey.autoLoadSuggest)) {

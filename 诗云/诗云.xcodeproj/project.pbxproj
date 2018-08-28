@@ -117,6 +117,27 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8A796D2921351B27003C3556 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8A85C514212E2AB100F38B7C /* ViewController.swift */,
+				8AFBA00D2134246300BCFF6C /* PrefViewController.swift */,
+				8A15D2CC213182EC00078A32 /* PoemDetailViewController.swift */,
+				8A935C912134D1B400604D11 /* CreditsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8A796D2A21351B4D003C3556 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				8A95BCBA21316C03005F128F /* AppUtils.swift */,
+				8AAE3AFA2134252200E9C302 /* PreferenceKey.swift */,
+				8AB3EC8C212F8F13008CB24E /* PoemStruct.swift */,
+			);
+			path = Structures;
+			sourceTree = "<group>";
+		};
 		8A85C506212E2AB100F38B7C = {
 			isa = PBXGroup;
 			children = (
@@ -144,14 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				8A85C53E212E2EEE00F38B7C /* 诗云.entitlements */,
-				8A935C912134D1B400604D11 /* CreditsViewController.swift */,
-				8A95BCBA21316C03005F128F /* AppUtils.swift */,
+				8A796D2921351B27003C3556 /* ViewControllers */,
+				8A796D2A21351B4D003C3556 /* Structures */,
 				8A85C512212E2AB100F38B7C /* AppDelegate.swift */,
-				8A85C514212E2AB100F38B7C /* ViewController.swift */,
-				8AAE3AFA2134252200E9C302 /* PreferenceKey.swift */,
-				8AFBA00D2134246300BCFF6C /* PrefViewController.swift */,
-				8AB3EC8C212F8F13008CB24E /* PoemStruct.swift */,
-				8A15D2CC213182EC00078A32 /* PoemDetailViewController.swift */,
 				8AF07AFE2133F718006510EA /* WindowController.swift */,
 				8A85C516212E2AB300F38B7C /* Assets.xcassets */,
 				8A85C518212E2AB300F38B7C /* Main.storyboard */,

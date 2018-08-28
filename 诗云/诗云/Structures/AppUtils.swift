@@ -30,7 +30,7 @@ func regExReplace(in rawString: String, pattern: String, with: String,
 }
 
 func manageParagraph(parsedString: String) -> String {
-    return parsedString.regExReplace(pattern: "(\\[[^\\]]*?\\])", with: "").regExReplace(pattern: "(\\([^\\)]*?\\))", with: "").replacingOccurrences(of: "。 ", with: "。").replacingOccurrences(of: "。", with: "。\n").replacingOccurrences(of: "?", with: "？").replacingOccurrences(of: "？ ", with: "？").replacingOccurrences(of: "？", with: "？\n").replacingOccurrences(of: "!", with: "！").replacingOccurrences(of: "！ ", with: "！").replacingOccurrences(of: "！", with: "！\n")
+    return parsedString.regExReplace(pattern: "(\\[[^\\]]*?\\])", with: "").regExReplace(pattern: "(\\([^\\)]*?\\))", with: "").replacingOccurrences(of: "\n", with: "\n\n").replacingOccurrences(of: "。 ", with: "。").replacingOccurrences(of: "。", with: "。\n").replacingOccurrences(of: "?", with: "？").replacingOccurrences(of: "？ ", with: "？").replacingOccurrences(of: "？", with: "？\n").replacingOccurrences(of: "!", with: "！").replacingOccurrences(of: "！ ", with: "！").replacingOccurrences(of: "！", with: "！\n").replacingOccurrences(of: "；", with: "；\n")
 }
 
 extension String {

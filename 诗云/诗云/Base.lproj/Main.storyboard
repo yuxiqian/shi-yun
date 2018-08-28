@@ -69,8 +69,8 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="文件" id="bib-Uj-vzu">
                                     <items>
-                                        <menuItem title="加载今日推荐" id="fmZ-hj-yn1">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        <menuItem title="加载今日推荐" keyEquivalent="S" id="fmZ-hj-yn1">
+                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                             <connections>
                                                 <action selector="loadTodaySuggest:" target="Ady-hI-5gd" id="Mu9-bv-hqh"/>
                                             </connections>
@@ -164,6 +164,19 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="内容" id="UzA-Ql-r7f">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="内容" autoenablesItems="NO" id="htg-RM-SNZ">
+                                    <items>
+                                        <menuItem title="检索作者" keyEquivalent="A" id="ZTl-2c-nQD">
+                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="doSearchAuthor:" target="Ady-hI-5gd" id="mGa-r1-vKM"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="窗口" id="aUF-d1-5bR">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="窗口" systemMenu="window" id="Td7-aD-5lo">
@@ -207,9 +220,14 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="诗云" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="诗云" customModuleProvider="target">
+                    <connections>
+                        <outlet property="showAuthorMenuButton" destination="ZTl-2c-nQD" id="Q7T-cd-OEv"/>
+                    </connections>
+                </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="JOe-Ea-n3c"/>
             </objects>
             <point key="canvasLocation" x="13" y="-428"/>
         </scene>
