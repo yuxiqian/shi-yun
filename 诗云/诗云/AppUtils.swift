@@ -21,6 +21,29 @@ func stringCompare(comparedStringOne s1: String, comparedStringTwo s2: String, i
     return (s1.localizedStandardCompare(s2).rawValue > 0) == isAscend
 }
 
+func regExReplace(in rawString: String, pattern: String, with: String,
+                 options: NSRegularExpression.Options = []) -> String {
+    let regex = try! NSRegularExpression(pattern: pattern, options: options)
+    return regex.stringByReplacingMatches(in: rawString, options: [],
+                                          range: NSMakeRange(0, rawString.count),
+                                          withTemplate: with)
+}
+
 func manageParagraph(parsedString: String) -> String {
-    return parsedString.replacingOccurrences(of: "。 ", with: "。").replacingOccurrences(of: "。", with: "。\n").replacingOccurrences(of: "?", with: "？").replacingOccurrences(of: "？ ", with: "？").replacingOccurrences(of: "？", with: "？\n").replacingOccurrences(of: "!", with: "！").replacingOccurrences(of: "！ ", with: "！").replacingOccurrences(of: "！", with: "！\n")
+    return parsedString.regExReplace(pattern: "(\\[[^\\]]*?\\])", with: "").regExReplace(pattern: "(\\([^\\)]*?\\))", with: "").replacingOccurrences(of: "。 ", with: "。").replacingOccurrences(of: "。", with: "。\n").replacingOccurrences(of: "?", with: "？").replacingOccurrences(of: "？ ", with: "？").replacingOccurrences(of: "？", with: "？\n").replacingOccurrences(of: "!", with: "！").replacingOccurrences(of: "！ ", with: "！").replacingOccurrences(of: "！", with: "！\n")
+}
+
+extension String {
+    var count: Int {
+        let string_NS = self as NSString
+        return string_NS.length
+    }
+
+    func regExReplace(pattern: String, with: String,
+                     options: NSRegularExpression.Options = []) -> String {
+        let regex = try! NSRegularExpression(pattern: pattern, options: options)
+        return regex.stringByReplacingMatches(in: self, options: [],
+                                              range: NSMakeRange(0, self.count),
+                                              withTemplate: with)
+    }
 }

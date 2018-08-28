@@ -217,13 +217,11 @@
         <scene sceneID="JRh-SM-UgK">
             <objects>
                 <windowController storyboardIdentifier="Preference Panel Controller" id="xWP-so-Kcu" sceneMemberID="viewController">
-                    <window key="window" title="偏好设置" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="alertPanel" frameAutosaveName="" titlebarAppearsTransparent="YES" id="dOW-dC-VNo" customClass="NSFixedWindow">
+                    <window key="window" title="偏好设置" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="alertPanel" frameAutosaveName="" id="dOW-dC-VNo" customClass="NSFixedWindow">
                         <windowStyleMask key="styleMask" titled="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="220" height="180"/>
+                        <rect key="contentRect" x="196" y="240" width="180" height="180"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-                        <value key="minSize" type="size" width="220" height="180"/>
-                        <value key="maxSize" type="size" width="220" height="180"/>
                         <connections>
                             <outlet property="delegate" destination="xWP-so-Kcu" id="9m5-2H-UeC"/>
                         </connections>
@@ -241,7 +239,7 @@
             <objects>
                 <viewController title="偏好设置" id="jN7-gD-3BT" customClass="PrefViewController" customModule="诗云" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="kBt-zG-EYq" customClass="NSVisualEffectView">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="180"/>
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LyB-nX-eUE">
@@ -260,19 +258,8 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JY7-Nd-Hul">
-                                <rect key="frame" x="100" y="5" width="56" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="push" title="取消" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZXH-iQ-0Tm">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="cancelAndClose:" target="jN7-gD-3BT" id="IzW-gx-kDv"/>
-                                </connections>
-                            </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yD9-2P-f3w">
-                                <rect key="frame" x="44" y="5" width="56" height="32"/>
+                                <rect key="frame" x="14" y="5" width="72" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <buttonCell key="cell" type="push" title="好" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hec-8a-8bW">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -307,6 +294,17 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JY7-Nd-Hul">
+                                <rect key="frame" x="94" y="5" width="72" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <buttonCell key="cell" type="push" title="取消" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZXH-iQ-0Tm">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="cancelAndClose:" target="jN7-gD-3BT" id="IzW-gx-kDv"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -328,7 +326,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" customClass="MainWindowController" customModule="诗云" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" identifier="mainWindow" title="诗云" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" animationBehavior="default" tabbingMode="disallowed" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
+                    <window key="window" identifier="mainWindow" title="诗云" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="720" height="480"/>
@@ -378,10 +376,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFm-cW-wa0">
-                                <rect key="frame" x="2" y="44" width="446" height="331"/>
+                                <rect key="frame" x="2" y="44" width="446" height="302"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="Q4h-iK-MEf">
-                                    <rect key="frame" x="0.0" y="0.0" width="446" height="331"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="446" height="302"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView ambiguous="YES" editable="NO" drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="9EN-hm-lq9">
@@ -389,7 +387,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="446" height="331"/>
+                                            <size key="minSize" width="446" height="302"/>
                                             <size key="maxSize" width="481" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment>
@@ -709,19 +707,10 @@ Copyright © 2015</string>
                                     </subviews>
                                 </clipView>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="dTQ-Y5-9II">
-                                    <rect key="frame" x="430" y="0.0" width="16" height="331"/>
+                                    <rect key="frame" x="430" y="0.0" width="16" height="302"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hC-wd-jc8">
-                                <rect key="frame" x="0.0" y="379" width="450" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Acknowledgements" id="SNB-jS-dov">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E1x-k5-368">
                                 <rect key="frame" x="192" y="5" width="67" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -733,6 +722,15 @@ Copyright © 2015</string>
                                     <action selector="closeWindow:" target="9LQ-h5-ypH" id="8Qc-V2-ly2"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hC-wd-jc8">
+                                <rect key="frame" x="0.0" y="354" width="450" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Acknowledgements" id="SNB-jS-dov">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                 </viewController>
@@ -744,7 +742,7 @@ Copyright © 2015</string>
         <scene sceneID="z0N-fm-GpI">
             <objects>
                 <windowController storyboardIdentifier="Poem Detail Window Controller" id="h1v-sl-lyS" sceneMemberID="viewController">
-                    <window key="window" title="Poem Detail" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="alertPanel" frameAutosaveName="" tabbingMode="preferred" titlebarAppearsTransparent="YES" id="zFN-AI-KEa">
+                    <window key="window" title="Poem Detail" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="alertPanel" frameAutosaveName="" tabbingMode="preferred" id="zFN-AI-KEa">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="480"/>
@@ -1121,7 +1119,7 @@ Copyright © 2015</string>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="arm-Xb-AQU">
                                 <rect key="frame" x="104" y="7" width="574" height="17"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" id="zLU-Ds-QXf">
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" id="zLU-Ds-QXf">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
