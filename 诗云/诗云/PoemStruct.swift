@@ -22,6 +22,5 @@ class Poem : NSObject {
         self.author = Author
         self.dynasty = Dynasty
         self.content = Content
-//        NSLog("生成poem对象，\(title) \(author) \(dynasty) \(content)")
     }
 }

@@ -24,8 +24,6 @@ class PrefViewController: NSViewController {
         super.viewDidLoad()
     }
     
-
-    
     @IBAction func onSliderSlides(_ sender: NSSlider) {
         updateTextPrompt()
     }
@@ -76,5 +74,3 @@ class PrefViewController: NSViewController {
         userDefaults.set(fontSizeSlider.intValue, forKey: PreferenceKey.fontSizePoint)
     }
 }
-
-

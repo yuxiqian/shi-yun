@@ -10,7 +10,6 @@ import Foundation
 import Cocoa
 
 class CreditsViewController : NSViewController {
-    
     @IBAction func closeWindow(_ sender: NSButton) {
         let application = NSApplication.shared
         application.stopModal()

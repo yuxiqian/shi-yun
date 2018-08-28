@@ -155,7 +155,6 @@ class ViewController: NSViewController, NSTouchBarDelegate {
 
 
     func updateLoadProgress(_ progress: Double) {
-        NSLog("Value: \(progress)")
         self.loadProgressIndicator.doubleValue = progress * 100
     }
     
@@ -165,9 +164,8 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     var loadToTheEnd = true
     
     func writeLog(_ log: String) {
-        NSLog(log)
+//        NSLog(log)
     }
-    
     
     func showErrorMessage(errorMsg: String) {
         //        self.writeLog("出错：\(errorMsg)")
@@ -293,9 +291,9 @@ class ViewController: NSViewController, NSTouchBarDelegate {
 //            tempHTMLPlaceHolder.string = ""
             if (!loadToTheEnd) {
                 loadToTheEnd = true
-                writeLog("终止加载")
+//                writeLog("终止加载")
             } else {
-                writeLog("空搜索内容，不发起请求")
+//                writeLog("空搜索内容，不发起请求")
             }
             return
         }
@@ -312,18 +310,18 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         switch popUpSelector.selectedItem?.title {
         case "作者":
             searchType = "author"
-            writeLog("匹配到标记：搜索作者")
+//            writeLog("匹配到标记：搜索作者")
             break
         case "古籍":
             searchType = "guwen"
-            writeLog("匹配到标记：搜索古籍")
+//            writeLog("匹配到标记：搜索古籍")
             break
         case "诗文":
             searchType = "title"
-            writeLog("匹配到标记：搜索诗文")
+//            writeLog("匹配到标记：搜索诗文")
             break
         default:
-            writeLog("啥也没匹配到。")
+//            writeLog("啥也没匹配到。")
             return
         }
 //        https://so.gushiwen.org/search.aspx?type=title&page=80&value=wwww
@@ -368,7 +366,7 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     func startSession(sessionUrl requestUrl: String, _ isSuggestMode: Bool) {
         let URLData = NSData(contentsOf: NSURL(string: requestUrl)! as URL)
         if URLData == nil {
-            self.writeLog("网络连接出错。")
+//            self.writeLog("网络连接出错。")
 //            let errorAlert: NSAlert = NSAlert()
 //            errorAlert.messageText = "网络连接出错。"
 //            errorAlert.alertStyle = NSAlert.Style.critical
@@ -378,7 +376,7 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         }
         var html: String = ""
         html = NSString(data: URLData! as Data, encoding: String.Encoding.utf8.rawValue)! as String
-        writeLog("得到 HTML 代码\(html.prefix(30))...")
+//        writeLog("得到 HTML 代码\(html.prefix(30))...")
         if html.contains("<b>未搜索到“") && html.contains("”相关资料</b>") {
             loadToTheEnd = true
         }
