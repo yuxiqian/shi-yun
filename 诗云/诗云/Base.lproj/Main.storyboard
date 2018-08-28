@@ -253,32 +253,15 @@
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="icv-6n-Q9d">
-                                <rect key="frame" x="18" y="118" width="76" height="18"/>
+                                <rect key="frame" x="18" y="124" width="76" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="自动换行" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="UUE-Fy-rA4">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
-                            <slider identifier="fontSizeSlider" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RTg-e0-zut">
-                                <rect key="frame" x="18" y="63" width="142" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="16" maxValue="64" doubleValue="42" tickMarkPosition="above" sliderType="linear" id="v0T-Y7-cYM"/>
-                                <connections>
-                                    <action selector="onSliderSlides:" target="jN7-gD-3BT" id="RkH-4n-XrI"/>
-                                </connections>
-                            </slider>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="370-rQ-ReI">
-                                <rect key="frame" x="18" y="88" width="130" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="正文默认字号：42 磅" id="O9J-xz-SHc">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JY7-Nd-Hul">
-                                <rect key="frame" x="130" y="13" width="56" height="32"/>
+                                <rect key="frame" x="100" y="5" width="56" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <buttonCell key="cell" type="push" title="取消" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZXH-iQ-0Tm">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -289,7 +272,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yD9-2P-f3w">
-                                <rect key="frame" x="74" y="13" width="56" height="32"/>
+                                <rect key="frame" x="44" y="5" width="56" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <buttonCell key="cell" type="push" title="好" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hec-8a-8bW">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -299,6 +282,31 @@
                                     <action selector="OKAndClose:" target="jN7-gD-3BT" id="Qxj-4h-P4C"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s3Z-ee-Sk5">
+                                <rect key="frame" x="18" y="104" width="129" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="使用「思源宋体」" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="e7K-Rq-to4">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <slider identifier="fontSizeSlider" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RTg-e0-zut">
+                                <rect key="frame" x="18" y="51" width="142" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="16" maxValue="64" doubleValue="42" tickMarkPosition="above" sliderType="linear" id="v0T-Y7-cYM"/>
+                                <connections>
+                                    <action selector="onSliderSlides:" target="jN7-gD-3BT" id="RkH-4n-XrI"/>
+                                </connections>
+                            </slider>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="370-rQ-ReI">
+                                <rect key="frame" x="18" y="76" width="130" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="正文默认字号：42 磅" id="O9J-xz-SHc">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
@@ -308,6 +316,7 @@
                         <outlet property="autoLoadSuggestBox" destination="LyB-nX-eUE" id="IAv-wq-PEc"/>
                         <outlet property="fontSizeSlider" destination="RTg-e0-zut" id="aYU-df-pha"/>
                         <outlet property="promptText" destination="370-rQ-ReI" id="2OI-XK-Ggd"/>
+                        <outlet property="useSourceSerifBox" destination="s3Z-ee-Sk5" id="QFU-rd-dqT"/>
                     </connections>
                 </viewController>
                 <customObject id="Dds-wd-Ifa" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -342,8 +351,8 @@
         <scene sceneID="XXy-Ek-jSO">
             <objects>
                 <windowController storyboardIdentifier="Acknowledgements Window Controller" showSeguePresentationStyle="single" id="fvh-Dp-UqL" sceneMemberID="viewController">
-                    <window key="window" title="致谢" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingIdentifier="ackWindow" tabbingMode="disallowed" titlebarAppearsTransparent="YES" id="NZ2-32-tc4">
-                        <windowStyleMask key="styleMask" titled="YES" texturedBackground="YES"/>
+                    <window key="window" title="致谢" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingIdentifier="ackWindow" tabbingMode="disallowed" id="NZ2-32-tc4">
+                        <windowStyleMask key="styleMask" titled="YES" texturedBackground="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="450" height="400"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
@@ -358,7 +367,7 @@
                 </windowController>
                 <customObject id="JhY-2Q-AqK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="658" y="136"/>
+            <point key="canvasLocation" x="658" y="114"/>
         </scene>
         <!--致谢-->
         <scene sceneID="Ig0-JE-tic">
@@ -376,7 +385,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView ambiguous="YES" editable="NO" drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="9EN-hm-lq9">
-                                            <rect key="frame" x="0.0" y="-44" width="446" height="1870"/>
+                                            <rect key="frame" x="0.0" y="-44" width="446" height="1883"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -616,7 +625,9 @@ Cg
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                     </attributes>
                                                 </fragment>
-                                                <fragment content="包含">
+                                                <fragment>
+                                                    <string key="content">
+包含</string>
                                                     <attributes>
                                                         <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                         <font key="NSFont" size="9" name="PingFangSC-Regular"/>
@@ -851,9 +862,9 @@ Copyright © 2015</string>
                                 </connections>
                             </slider>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xrM-2X-duG">
-                                <rect key="frame" x="273" y="18" width="54" height="17"/>
+                                <rect key="frame" x="256" y="18" width="71" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="字号  24" id="6aZ-we-SZA">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="字号  24 磅" id="6aZ-we-SZA">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

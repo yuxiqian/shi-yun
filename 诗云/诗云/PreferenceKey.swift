@@ -12,4 +12,5 @@ struct PreferenceKey {
     static let autoLoadSuggest = "autoLoadSuggest"
     static let fontSizePoint = "fontSizePoint"
     static let autoLayout = "autoLayout"
+    static let useSourceSerif = "useSourceSerif"
 }

@@ -20,6 +20,7 @@
 		8AB3EC8D212F8F13008CB24E /* PoemStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3EC8C212F8F13008CB24E /* PoemStruct.swift */; };
 		8AE5BC402132A4C000C4033E /* RMBlurredView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE5BC3F2132A4BF00C4033E /* RMBlurredView.m */; };
 		8AF07AFF2133F718006510EA /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF07AFE2133F718006510EA /* WindowController.swift */; };
+		8AF51DEC2134EB51005F10A6 /* SourceHanSerifCN-Light.otf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AF51DEA2134EB43005F10A6 /* SourceHanSerifCN-Light.otf */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8AFBA00E2134246300BCFF6C /* PrefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFBA00D2134246300BCFF6C /* PrefViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8AF51DE82134EB10005F10A6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = fonts;
+			dstSubfolderSpec = 7;
+			files = (
+				8AF51DEC2134EB51005F10A6 /* SourceHanSerifCN-Light.otf in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		675091C5AFA1111A19893916 /* libPods-诗云.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-诗云.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		895D91E49C380BC47F4B200B /* Pods-诗云.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-诗云.release.xcconfig"; path = "Pods/Target Support Files/Pods-诗云/Pods-诗云.release.xcconfig"; sourceTree = "<group>"; };
@@ -59,10 +73,10 @@
 		8A95BCBA21316C03005F128F /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
 		8AAE3AFA2134252200E9C302 /* PreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKey.swift; sourceTree = "<group>"; };
 		8AB3EC8C212F8F13008CB24E /* PoemStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemStruct.swift; sourceTree = "<group>"; };
-		8AE5BC3D2132A4BE00C4033E /* 诗云-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "诗云-Bridging-Header.h"; sourceTree = "<group>"; };
 		8AE5BC3E2132A4BF00C4033E /* RMBlurredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMBlurredView.h; path = RMBlurredView/RMBlurredView.h; sourceTree = "<group>"; };
 		8AE5BC3F2132A4BF00C4033E /* RMBlurredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMBlurredView.m; path = RMBlurredView/RMBlurredView.m; sourceTree = "<group>"; };
 		8AF07AFE2133F718006510EA /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		8AF51DEA2134EB43005F10A6 /* SourceHanSerifCN-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSerifCN-Light.otf"; sourceTree = "<group>"; };
 		8AFBA00D2134246300BCFF6C /* PrefViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefViewController.swift; sourceTree = "<group>"; };
 		B10D893A622491335E845C5E /* Pods-诗云.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-诗云.debug.xcconfig"; path = "Pods/Target Support Files/Pods-诗云/Pods-诗云.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,11 +122,11 @@
 			children = (
 				8AE5BC3E2132A4BF00C4033E /* RMBlurredView.h */,
 				8AE5BC3F2132A4BF00C4033E /* RMBlurredView.m */,
+				8AF51DE92134EB43005F10A6 /* Fonts */,
 				8A85C511212E2AB100F38B7C /* 诗云 */,
 				8A85C510212E2AB100F38B7C /* Products */,
 				80C58A35E04A5C94287CB36D /* Pods */,
 				CBE0270A3C4B1C8B22C6B829 /* Frameworks */,
-				8AE5BC3D2132A4BE00C4033E /* 诗云-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +161,15 @@
 			path = "诗云";
 			sourceTree = "<group>";
 		};
+		8AF51DE92134EB43005F10A6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8AF51DEA2134EB43005F10A6 /* SourceHanSerifCN-Light.otf */,
+			);
+			name = Fonts;
+			path = ../Fonts;
+			sourceTree = "<group>";
+		};
 		CBE0270A3C4B1C8B22C6B829 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +190,7 @@
 				8A85C50B212E2AB100F38B7C /* Sources */,
 				8A85C50C212E2AB100F38B7C /* Frameworks */,
 				8A85C50D212E2AB100F38B7C /* Resources */,
+				8AF51DE82134EB10005F10A6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -514,7 +538,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = yue.poem.shi.yun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "诗云-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
@@ -539,7 +563,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = yue.poem.shi.yun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "诗云-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;

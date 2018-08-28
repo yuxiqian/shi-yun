@@ -11,10 +11,11 @@ import Cocoa
 
 class PrefViewController: NSViewController {
     @IBOutlet weak var autoLoadSuggestBox: NSButton!
+    @IBOutlet weak var useSourceSerifBox: NSButton!
     @IBOutlet weak var autoLayoutBox: NSButton!
     @IBOutlet weak var promptText: NSTextField!
     @IBOutlet weak var fontSizeSlider: NSSlider!
-    
+
     let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -48,6 +49,7 @@ class PrefViewController: NSViewController {
             PreferenceKey.autoLoadSuggest: false,
             PreferenceKey.fontSizePoint: 24,
             PreferenceKey.autoLayout: true,
+            PreferenceKey.useSourceSerif: true,
             ]
         userDefaults.register(defaults: defaultPreferences)
     }
@@ -65,12 +67,19 @@ class PrefViewController: NSViewController {
             autoLayoutBox.state = NSControl.StateValue.off
         }
         
+        if (userDefaults.bool(forKey: PreferenceKey.useSourceSerif)) {
+            useSourceSerifBox.state = NSControl.StateValue.on
+        } else {
+            useSourceSerifBox.state = NSControl.StateValue.off
+        }
+        
         fontSizeSlider.intValue = Int32(userDefaults.integer(forKey: PreferenceKey.fontSizePoint))
     }
     
     fileprivate func savePrefs() {
         userDefaults.set(autoLoadSuggestBox.state == NSControl.StateValue.on, forKey: PreferenceKey.autoLoadSuggest)
         userDefaults.set(autoLayoutBox.state == NSControl.StateValue.on, forKey: PreferenceKey.autoLayout)
+        userDefaults.set(useSourceSerifBox.state == NSControl.StateValue.on, forKey: PreferenceKey.useSourceSerif)
         userDefaults.set(fontSizeSlider.intValue, forKey: PreferenceKey.fontSizePoint)
     }
 }

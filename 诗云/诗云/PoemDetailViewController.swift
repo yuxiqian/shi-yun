@@ -9,6 +9,9 @@
 import Cocoa
 
 class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
+    
+    let titleFontSize = 32
+    let authorAndDynastyFontSize = 13
 
     @IBOutlet var contentField: NSTextView!
     @IBOutlet weak var autoNewLine: NSButton!
@@ -20,10 +23,11 @@ class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
     
     @objc dynamic var isAutoLayout = false
     @objc dynamic var fontSize = 24
+    var useSourceFont = true
     
     @IBAction func fontSizeChanger(_ sender: NSSlider) {
         self.fontSize = Int(fontSizeSlider.intValue)
-        fontSizeDisplay.stringValue = "字号  \(self.fontSize)"
+        fontSizeDisplay.stringValue = "字号  \(self.fontSize) 磅"
     }
     
     @IBAction func onChecked(_ sender: NSButton) {
@@ -46,7 +50,7 @@ class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
     var poemParsedContent = "床前明月光，疑是地上霜。\n举头望明月，低头思故乡。"
     override func viewDidLayout() {
         contentField.isEditable = false
-        isAutoLayout = userDefaults.bool(forKey: PreferenceKey.autoLayout)
+
         NSLog("Now, isAutoLayout = \(isAutoLayout), poemContent = \(poemContent), poemParsedContent = \(poemParsedContent)")
         if isAutoLayout {
             contentField.string = poemParsedContent
@@ -56,16 +60,22 @@ class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
             autoNewLine.state = NSControl.StateValue.off
         }
         fontSizeSlider.intValue = Int32(self.fontSize)
-        fontSizeDisplay.stringValue = "字号  \(self.fontSize)"
+        fontSizeDisplay.stringValue = "字号  \(self.fontSize) 磅"
+        if useSourceFont {
+            contentField.font = NSFont(name: "SourceHanSerifCN-Light", size: CGFloat(fontSize))
+            titleField.font = NSFont(name: "SourceHanSerifCN-Light", size: CGFloat(titleFontSize))
+            authorField.font = NSFont(name: "SourceHanSerifCN-Light", size: CGFloat(authorAndDynastyFontSize))
+            dynastyField.font = NSFont(name: "SourceHanSerifCN-Light", size: CGFloat(authorAndDynastyFontSize))
+        }
         writeContent()
         super.viewDidLayout()
     }
     
     override func viewDidLoad() {
         // Do view setup here.
-
         fontSize = userDefaults.integer(forKey: PreferenceKey.fontSizePoint)
-
+        isAutoLayout = userDefaults.bool(forKey: PreferenceKey.autoLayout)
+        useSourceFont = userDefaults.bool(forKey: PreferenceKey.useSourceSerif)
         super.viewDidLoad()
     }
 
