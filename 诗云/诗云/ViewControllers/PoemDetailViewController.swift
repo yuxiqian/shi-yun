@@ -23,6 +23,7 @@ class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
     
     @objc dynamic var isAutoLayout = false
     @objc dynamic var fontSize = 24
+    
     var useSourceFont = true
     
     @IBAction func fontSizeChanger(_ sender: NSSlider) {
@@ -48,10 +49,19 @@ class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
     let userDefaults = UserDefaults.standard
     var poemContent = "床前明月光，疑是地上霜。举头望明月，低头思故乡。"
     var poemParsedContent = "床前明月光，疑是地上霜。\n举头望明月，低头思故乡。"
+    
+    
+    override func viewDidLoad() {
+        // Do view setup here.
+        fontSize = userDefaults.integer(forKey: PreferenceKey.fontSizePoint)
+        isAutoLayout = userDefaults.bool(forKey: PreferenceKey.autoLayout)
+        useSourceFont = userDefaults.bool(forKey: PreferenceKey.useSourceSerif)
+        super.viewDidLoad()
+    }
+    
     override func viewDidLayout() {
         contentField.isEditable = false
-
-        NSLog("Now, isAutoLayout = \(isAutoLayout), poemContent = \(poemContent), poemParsedContent = \(poemParsedContent)")
+//        NSLog("Now, isAutoLayout = \(isAutoLayout), poemContent = \(poemContent), poemParsedContent = \(poemParsedContent)")
         if isAutoLayout {
             contentField.string = poemParsedContent
             autoNewLine.state = NSControl.StateValue.on
@@ -70,14 +80,7 @@ class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
         writeContent()
         super.viewDidLayout()
     }
-    
-    override func viewDidLoad() {
-        // Do view setup here.
-        fontSize = userDefaults.integer(forKey: PreferenceKey.fontSizePoint)
-        isAutoLayout = userDefaults.bool(forKey: PreferenceKey.autoLayout)
-        useSourceFont = userDefaults.bool(forKey: PreferenceKey.useSourceSerif)
-        super.viewDidLoad()
-    }
+
 
     func writeContent() {
         if isAutoLayout {

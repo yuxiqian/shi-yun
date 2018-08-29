@@ -15,8 +15,6 @@ class ViewController: NSViewController, NSTouchBarDelegate {
 
 
     override func viewDidLoad() {
-
-        super.viewDidLoad()
         self.view.wantsLayer = true
         
         tableView.delegate = self
@@ -40,6 +38,7 @@ class ViewController: NSViewController, NSTouchBarDelegate {
             loadTodaySuggest(self)
         }
 //        loadMoreButton.isHidden = true
+        super.viewDidLoad()
     }
     
     func updateSettings() {
@@ -95,12 +94,11 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     }
     
     @objc func touchBarSearchContext(_ sender: NSButton) {
-        self.searchButtonPressed(searchButton)
+        self.searchButtonPressed(sender)
     }
     
     @objc func touchBarSearchAuthor(_ sender: NSButton) {
-        doSearchAuthor(sender)
-
+        self.searchAuthorInfo(sender)
     }
     
     @IBAction func doSearchAuthor(_ sender: NSButton) {
@@ -115,9 +113,49 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         updateAuthorState()
     }
     
+    @IBAction func searchAuthorInfo(_ sender: NSButton) {
+        guard tableView.selectedRow >= 0,
+            let selectedItem = poemArray[tableView.selectedRow] else {
+                updateAuthorState()
+                return
+        }
+        var requestUrl = "https://so.gushiwen.org/search.aspx?value=\(selectedItem.author)"
+        requestUrl = requestUrl.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let URLData = NSData(contentsOf: NSURL(string: requestUrl)! as URL)
+        if URLData == nil {
+//          self.writeLog("网络连接出错。")
+            showErrorMessage(errorMsg: "网络连接失败。")
+            return
+        }
+        let htmlString = NSString(data: URLData! as Data, encoding: String.Encoding.utf8.rawValue)! as String
+        if let parsedDoc = try? HTML(html: htmlString, encoding: .utf8) {
+            var authorText = "Null"
+            for node in parsedDoc.css("body > div.main3 > div.left > div.sonspic > div.cont > p:nth-child(3)") {
+                authorText = node.text!
+            }
+//            NSLog(authorInfo)
+            if (authorText != "Null") {
+                let storyboard = NSStoryboard(name: "Main", bundle: nil)
+                let authorInfoWindowController = storyboard.instantiateController(withIdentifier: "Author Info Window Controller") as! NSWindowController
+//                NSLog("gotta \(authorText)")
+                if let authorInfoWindow = authorInfoWindowController.window {
+                    let authorInfoViewController = authorInfoWindow.contentViewController as! AuthorInfoViewController
+                    authorInfoViewController.authorName = selectedItem.author
+                    authorInfoViewController.authorInfo = authorText
+                    authorInfoWindow.title = "「\(selectedItem.author)」的信息"
+                    authorInfoWindowController.showWindow(nil)
+                }
+            } else {
+                showErrorMessage(errorMsg: "未找到作者「\(selectedItem.author)」的相关信息。")
+            }
+        }
+    }
+    
     @IBAction func goToWebsite(_ sender: NSButton) {
         if let url = URL(string: "https://www.gushiwen.org"), NSWorkspace.shared.open(url) {
             // successfully opened
+        } else {
+            showErrorMessage(errorMsg: "未能打开网页。")
         }
     }
     
@@ -174,9 +212,9 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     let globalQueue = DispatchQueue.global()
     var loadToTheEnd = true
     
-    func writeLog(_ log: String) {
+//    func writeLog(_ log: String) {
 //        NSLog(log)
-    }
+//    }
     
     func showErrorMessage(errorMsg: String) {
         //        self.writeLog("出错：\(errorMsg)")
@@ -563,7 +601,6 @@ extension ViewController: NSTableViewDelegate {
     }
     
     @objc func tableViewDoubleClick(_ sender:AnyObject) {
-        updateSettings()
         guard tableView.selectedRow >= 0,
             let selPoem = poemArray[tableView.selectedRow] else {
                 return

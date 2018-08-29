@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		36D252EAE82F901AFBC4AF5D /* libPods-诗云.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 675091C5AFA1111A19893916 /* libPods-诗云.a */; };
 		8A15D2CD213182EC00078A32 /* PoemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15D2CC213182EC00078A32 /* PoemDetailViewController.swift */; };
+		8A27D7442136120B0088192B /* AuthorInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A27D7432136120B0088192B /* AuthorInfoViewController.swift */; };
 		8A630DD2212EAE5000B9EF51 /* libKanna.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A630DD1212EAE5000B9EF51 /* libKanna.a */; };
 		8A85C513212E2AB100F38B7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85C512212E2AB100F38B7C /* AppDelegate.swift */; };
 		8A85C515212E2AB100F38B7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85C514212E2AB100F38B7C /* ViewController.swift */; };
@@ -58,6 +59,7 @@
 		675091C5AFA1111A19893916 /* libPods-诗云.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-诗云.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		895D91E49C380BC47F4B200B /* Pods-诗云.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-诗云.release.xcconfig"; path = "Pods/Target Support Files/Pods-诗云/Pods-诗云.release.xcconfig"; sourceTree = "<group>"; };
 		8A15D2CC213182EC00078A32 /* PoemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemDetailViewController.swift; sourceTree = "<group>"; };
+		8A27D7432136120B0088192B /* AuthorInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorInfoViewController.swift; sourceTree = "<group>"; };
 		8A630DD1212EAE5000B9EF51 /* libKanna.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libKanna.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A630DD5212EE8F900B9EF51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
 		8A85C50F212E2AB100F38B7C /* 诗云.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "诗云.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 				8AFBA00D2134246300BCFF6C /* PrefViewController.swift */,
 				8A15D2CC213182EC00078A32 /* PoemDetailViewController.swift */,
 				8A935C912134D1B400604D11 /* CreditsViewController.swift */,
+				8A27D7432136120B0088192B /* AuthorInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				8A15D2CD213182EC00078A32 /* PoemDetailViewController.swift in Sources */,
 				8AB3EC8D212F8F13008CB24E /* PoemStruct.swift in Sources */,
 				8AE5BC402132A4C000C4033E /* RMBlurredView.m in Sources */,
+				8A27D7442136120B0088192B /* AuthorInfoViewController.swift in Sources */,
 				8AF07AFF2133F718006510EA /* WindowController.swift in Sources */,
 				8A85C515212E2AB100F38B7C /* ViewController.swift in Sources */,
 				8A85C513212E2AB100F38B7C /* AppDelegate.swift in Sources */,

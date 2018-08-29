@@ -13,7 +13,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet var window: NSWindow!
     @IBOutlet weak var showAuthorMenuButton: NSMenuItem!
-//    var isServiceCalled = false
+    @IBOutlet weak var showAuthorInfoButton: NSMenuItem!
+    //    var isServiceCalled = false
 //    var serviceQueryText = ""
 //    var serviceQueryAuthor = ""
     
@@ -26,10 +27,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func setAuthorMenu(_ authorName: String = "") {
         if authorName == "" {
             showAuthorMenuButton.isEnabled = false
-            showAuthorMenuButton.title = "检索作者"
+            showAuthorInfoButton.isEnabled = false
+            showAuthorMenuButton.title = "检索所有此作者的诗文"
+            showAuthorInfoButton.title = "检索此作者的信息"
         } else {
             showAuthorMenuButton.isEnabled = true
-            showAuthorMenuButton.title = "检索作者「\(authorName)」"
+            showAuthorInfoButton.isEnabled = true
+            showAuthorMenuButton.title = "检索所有「\(authorName)」的诗文"
+            showAuthorInfoButton.title = "检索「\(authorName)」的信息"
         }
     }
     
