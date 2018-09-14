@@ -31,13 +31,11 @@ class PrefViewController: NSViewController {
     
     @IBAction func OKAndClose(_ sender: NSButton) {
         savePrefs()
-        let application = NSApplication.shared
-        application.stopModal()
+        self.view.window?.close()
     }
     
     @IBAction func cancelAndClose(_ sender: NSButton) {
-        let application = NSApplication.shared
-        application.stopModal()
+        self.view.window?.close()
     }
     
     fileprivate func updateTextPrompt() {

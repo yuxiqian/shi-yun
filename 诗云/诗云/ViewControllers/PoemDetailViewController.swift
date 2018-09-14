@@ -10,10 +10,25 @@ import Cocoa
 
 class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
     
-    let titleFontSize = 32
-    let authorAndDynastyFontSize = 13
-
+    let titleFontSize = 28
+    let authorAndDynastyFontSize = 11
+    
+    init(title: String, dynasty: String, author: String, content: String) {
+        poemTitle = title
+        poemDynasty = dynasty
+        poemAuthor = author
+        poemContent = content
+        poemParsedContent = manageParagraph(parsedString: content)
+        super.init(nibName: NSNib.Name("PoemDetailViewController"), bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     @IBOutlet var contentField: NSTextView!
+    
     @IBOutlet weak var autoNewLine: NSButton!
     @IBOutlet weak var titleField: NSTextField!
     @IBOutlet weak var authorField: NSTextField!
@@ -62,6 +77,9 @@ class PoemDetailViewController: NSViewController, NSTouchBarDelegate {
     override func viewDidLayout() {
         contentField.isEditable = false
 //        NSLog("Now, isAutoLayout = \(isAutoLayout), poemContent = \(poemContent), poemParsedContent = \(poemParsedContent)")
+        titleField.stringValue = poemTitle
+        authorField.stringValue = poemAuthor
+        dynastyField.stringValue = poemDynasty
         if isAutoLayout {
             contentField.string = poemParsedContent
             autoNewLine.state = NSControl.StateValue.on

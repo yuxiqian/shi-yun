@@ -13,7 +13,21 @@ class AuthorInfoViewController : NSViewController {
     @IBOutlet weak var authorNameTextField: NSTextField!
     @IBOutlet var infoTextField: NSTextView!
     
-    let authorNameFontSize = 32
+    
+    init(author: String, content: String) {
+
+        authorName = author
+        authorInfo = content
+
+        super.init(nibName: NSNib.Name("AuthorInfoViewController"), bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    let authorNameFontSize = 28
     let authorInfoFontSize = 24
     
     var authorName: String = ""

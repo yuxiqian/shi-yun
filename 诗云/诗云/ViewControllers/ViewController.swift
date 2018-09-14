@@ -9,10 +9,21 @@
 import Cocoa
 import Kanna
 
-class ViewController: NSViewController, NSTouchBarDelegate {
+class ViewController: NSViewController, NSTouchBarDelegate, NSPopoverDelegate {
     
     var isAutoSuggest = false
 
+    lazy var poemPopOver: NSPopover = {
+        let poemPopOver = NSPopover()
+        poemPopOver.behavior = .semitransient
+        poemPopOver.delegate = self
+        return poemPopOver
+    }()
+
+
+    func popoverShouldDetach(_ popover: NSPopover) -> Bool {
+        return true
+    }
 
     override func viewDidLoad() {
         self.view.wantsLayer = true
@@ -135,16 +146,13 @@ class ViewController: NSViewController, NSTouchBarDelegate {
             }
 //            NSLog(authorInfo)
             if (authorText != "Null") {
-                let storyboard = NSStoryboard(name: "Main", bundle: nil)
-                let authorInfoWindowController = storyboard.instantiateController(withIdentifier: "Author Info Window Controller") as! NSWindowController
-//                NSLog("gotta \(authorText)")
-                if let authorInfoWindow = authorInfoWindowController.window {
-                    let authorInfoViewController = authorInfoWindow.contentViewController as! AuthorInfoViewController
-                    authorInfoViewController.authorName = selectedItem.author
-                    authorInfoViewController.authorInfo = authorText
-                    authorInfoWindow.title = "「\(selectedItem.author)」的信息"
-                    authorInfoWindowController.showWindow(nil)
-                }
+                poemPopOver.appearance = NSAppearance(named: NSAppearance.Name.aqua)!
+                let controller = AuthorInfoViewController(author: selectedItem.author, content: authorText)
+                poemPopOver.contentViewController = controller
+                let positioningView = tableView.view(atColumn: 1, row: tableView.selectedRow, makeIfNecessary: false)
+                let positioningRect = NSZeroRect
+                let preferredEdge = NSRectEdge.maxX
+                poemPopOver.show(relativeTo: positioningRect, of: positioningView!, preferredEdge: preferredEdge)
             } else {
                 showErrorMessage(errorMsg: "未找到作者「\(selectedItem.author)」的相关信息。")
             }
@@ -182,8 +190,8 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     }
     
     @IBAction func openPreferencePanel(_ sender: Any) {
-        let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        let prefPanelController = storyboard.instantiateController(withIdentifier: "Preference Panel Controller") as! NSWindowController
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        let prefPanelController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Preference Panel Controller")) as! NSWindowController
         if let prefPanel = prefPanelController.window {
             let application = NSApplication.shared
             application.runModal(for: prefPanel)
@@ -193,8 +201,8 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     
     
     @IBAction func openAcknowledgementsWindow(_ sender: Any) {
-        let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        let acknowledgementsWindowController = storyboard.instantiateController(withIdentifier: "Acknowledgements Window Controller") as! NSWindowController
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        let acknowledgementsWindowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Acknowledgements Window Controller")) as! NSWindowController
         if let acknowledgementsWindow = acknowledgementsWindowController.window {
             let application = NSApplication.shared
             application.runModal(for: acknowledgementsWindow)
@@ -357,15 +365,15 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         var searchType = ""
         loadToTheEnd = false
         switch popUpSelector.selectedItem?.title {
-        case "作者":
+        case "作者"?:
             searchType = "author"
 //            writeLog("匹配到标记：搜索作者")
             break
-        case "古籍":
+        case "古籍"?:
             searchType = "guwen"
 //            writeLog("匹配到标记：搜索古籍")
             break
-        case "诗文":
+        case "诗文"?:
             searchType = "title"
 //            writeLog("匹配到标记：搜索诗文")
             break
@@ -524,6 +532,9 @@ class ViewController: NSViewController, NSTouchBarDelegate {
 
     
     func updateStatusBar() {
+        if (popoverVisible) {
+            poemPopOver.performClose(nil)
+        }
         guard tableView.selectedRow >= 0,
             let selectedItem = poemArray[tableView.selectedRow] else {
                 self.statusBar.stringValue = ""
@@ -539,6 +550,7 @@ class ViewController: NSViewController, NSTouchBarDelegate {
             appDel.setAuthorMenu(givenAuthor)
         }
     }
+
 }
 
 
@@ -600,28 +612,48 @@ extension ViewController: NSTableViewDelegate {
         return nil
     }
     
-    @objc func tableViewDoubleClick(_ sender:AnyObject) {
+    private var popoverVisible: Bool {
+        get { return poemPopOver.isShown }
+    }
+    
+    @objc func tableViewDoubleClick(_ sender: AnyObject) {
         guard tableView.selectedRow >= 0,
             let selPoem = poemArray[tableView.selectedRow] else {
                 return
         }
-//        NSLog("Selpoem has...\(selPoem.title), \(selPoem.author), \(selPoem.dynasty), \(selPoem.content),")
-        let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        let poemDetailWindowController = storyboard.instantiateController(withIdentifier: "Poem Detail Window Controller") as! NSWindowController
-            
-        if let poemDetailWindow = poemDetailWindowController.window {
-            let poemDetailViewController = poemDetailWindow.contentViewController as! PoemDetailViewController
-            poemDetailViewController.poemTitle = selPoem.title
-            poemDetailViewController.poemAuthor = selPoem.author
-            poemDetailViewController.poemDynasty = selPoem.dynasty
-            poemDetailViewController.poemContent = selPoem.content
-            poemDetailViewController.poemParsedContent = manageParagraph(parsedString: poemDetailViewController.poemContent)
-//            let application = NSApplication.shared
-//            application.runModal(for: poemDetailWindow)
-//            poemDetailWindow.close()
-            poemDetailWindow.title = "\(selPoem.title)-  [\(selPoem.dynasty)] \(selPoem.author)"
-            poemDetailWindowController.showWindow(nil)
+        if (popoverVisible) {
+            poemPopOver.performClose(nil)
         }
+//        NSLog("Selpoem has...\(selPoem.title), \(selPoem.author), \(selPoem.dynasty), \(selPoem.content),")
+//        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+//        let poemDetailWindowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("Poem Detail Window Controller")) as! NSWindowController
+//
+//        if let poemDetailWindow = poemDetailWindowController.window {
+//            let poemDetailViewController = poemDetailWindow.contentViewController as! PoemDetailViewController
+//            poemDetailViewController.poemTitle = selPoem.title
+//            poemDetailViewController.poemAuthor = selPoem.author
+//            poemDetailViewController.poemDynasty = selPoem.dynasty
+//            poemDetailViewController.poemContent = selPoem.content
+//            poemDetailViewController.poemParsedContent = manageParagraph(parsedString: poemDetailViewController.poemContent)
+////            let application = NSApplication.shared
+////            application.runModal(for: poemDetailWindow)
+////            poemDetailWindow.close()
+//            poemDetailWindow.title = "\(selPoem.title)-  [\(selPoem.dynasty)] \(selPoem.author)"
+//            poemDetailWindowController.showWindow(nil)
+//        }
+//
+        
+        poemPopOver.appearance = NSAppearance(named: NSAppearance.Name.aqua)!
+        let controller = PoemDetailViewController(title: selPoem.title,
+                                                  dynasty: selPoem.dynasty,
+                                                  author: selPoem.author,
+                                                  content: selPoem.content)
+        poemPopOver.contentViewController = controller
+        let positioningView = tableView.view(atColumn: tableView.clickedColumn, row: tableView.selectedRow, makeIfNecessary: false)
+        let positioningRect = NSZeroRect
+        let preferredEdge = NSRectEdge.maxX
+            
+        poemPopOver.show(relativeTo: positioningRect, of: positioningView!, preferredEdge: preferredEdge)
     }
 }
 

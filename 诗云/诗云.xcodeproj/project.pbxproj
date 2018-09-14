@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		36D252EAE82F901AFBC4AF5D /* libPods-诗云.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 675091C5AFA1111A19893916 /* libPods-诗云.a */; };
 		8A15D2CD213182EC00078A32 /* PoemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15D2CC213182EC00078A32 /* PoemDetailViewController.swift */; };
 		8A27D7442136120B0088192B /* AuthorInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A27D7432136120B0088192B /* AuthorInfoViewController.swift */; };
+		8A363F61214BB75F003DDF16 /* PoemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A363F60214BB75F003DDF16 /* PoemDetailViewController.xib */; };
+		8A363F63214BB7CA003DDF16 /* AuthorInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A363F62214BB7CA003DDF16 /* AuthorInfoViewController.xib */; };
 		8A630DD2212EAE5000B9EF51 /* libKanna.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A630DD1212EAE5000B9EF51 /* libKanna.a */; };
 		8A85C513212E2AB100F38B7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85C512212E2AB100F38B7C /* AppDelegate.swift */; };
 		8A85C515212E2AB100F38B7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85C514212E2AB100F38B7C /* ViewController.swift */; };
@@ -60,6 +62,8 @@
 		895D91E49C380BC47F4B200B /* Pods-诗云.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-诗云.release.xcconfig"; path = "Pods/Target Support Files/Pods-诗云/Pods-诗云.release.xcconfig"; sourceTree = "<group>"; };
 		8A15D2CC213182EC00078A32 /* PoemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemDetailViewController.swift; sourceTree = "<group>"; };
 		8A27D7432136120B0088192B /* AuthorInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorInfoViewController.swift; sourceTree = "<group>"; };
+		8A363F60214BB75F003DDF16 /* PoemDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PoemDetailViewController.xib; sourceTree = "<group>"; };
+		8A363F62214BB7CA003DDF16 /* AuthorInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorInfoViewController.xib; sourceTree = "<group>"; };
 		8A630DD1212EAE5000B9EF51 /* libKanna.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libKanna.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A630DD5212EE8F900B9EF51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
 		8A85C50F212E2AB100F38B7C /* 诗云.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "诗云.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +123,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8A363F5F214BB74C003DDF16 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8A85C518212E2AB300F38B7C /* Main.storyboard */,
+				8A363F60214BB75F003DDF16 /* PoemDetailViewController.xib */,
+				8A363F62214BB7CA003DDF16 /* AuthorInfoViewController.xib */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		8A796D2921351B27003C3556 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,13 +181,13 @@
 		8A85C511212E2AB100F38B7C /* 诗云 */ = {
 			isa = PBXGroup;
 			children = (
+				8A363F5F214BB74C003DDF16 /* Resources */,
 				8A85C53E212E2EEE00F38B7C /* 诗云.entitlements */,
 				8A796D2921351B27003C3556 /* ViewControllers */,
 				8A796D2A21351B4D003C3556 /* Structures */,
 				8A85C512212E2AB100F38B7C /* AppDelegate.swift */,
 				8AF07AFE2133F718006510EA /* WindowController.swift */,
 				8A85C516212E2AB300F38B7C /* Assets.xcassets */,
-				8A85C518212E2AB300F38B7C /* Main.storyboard */,
 				8A630DD4212EE85800B9EF51 /* Info.plist */,
 				8A85C51C212E2AB300F38B7C /* __.entitlements */,
 			);
@@ -269,6 +283,7 @@
 					8A85C50E212E2AB100F38B7C = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -277,16 +292,18 @@
 					};
 					8A85C520212E2AB300F38B7C = {
 						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 8A85C50E212E2AB100F38B7C;
 					};
 					8A85C52B212E2AB300F38B7C = {
 						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 8A85C50E212E2AB100F38B7C;
 					};
 				};
 			};
 			buildConfigurationList = 8A85C50A212E2AB100F38B7C /* Build configuration list for PBXProject "诗云" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -311,6 +328,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A85C517212E2AB300F38B7C /* Assets.xcassets in Resources */,
+				8A363F61214BB75F003DDF16 /* PoemDetailViewController.xib in Resources */,
+				8A363F63214BB7CA003DDF16 /* AuthorInfoViewController.xib in Resources */,
 				8A85C51A212E2AB300F38B7C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,15 +356,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-诗云-checkManifestLockResult.txt",
 			);
@@ -534,8 +549,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -551,10 +565,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 24XARD42BP;
 				INFOPLIST_FILE = "诗云/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = yue.poem.shi.yun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -576,10 +588,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 24XARD42BP;
 				INFOPLIST_FILE = "诗云/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = yue.poem.shi.yun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -597,11 +607,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = F6EKR37AV8;
 				INFOPLIST_FILE = "诗云Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "yue.poem.cloud.--Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -618,11 +624,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = F6EKR37AV8;
 				INFOPLIST_FILE = "诗云Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "yue.poem.cloud.--Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -638,11 +640,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = F6EKR37AV8;
 				INFOPLIST_FILE = "诗云UITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "yue.poem.cloud.--UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -658,11 +657,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = F6EKR37AV8;
 				INFOPLIST_FILE = "诗云UITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "yue.poem.cloud.--UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
